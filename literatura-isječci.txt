@@ -1,0 +1,8 @@
+Bang Ye Wu, Kun-Mao Chao - Spanning trees and optimisation problems
+- stranica 19.
+
+Moon - Counting labelled trees
+- 5. poglavlje, Matrix-Tree teorem
+
+Cristopher Moore, Stephan Mertens - The Nature of Computation
+- 13. poglavlje, Matrix-Tree teorem

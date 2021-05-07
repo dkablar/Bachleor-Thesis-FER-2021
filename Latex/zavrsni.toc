@@ -1,0 +1,11 @@
+\babel@toc {croatian}{}
+\contentsline {chapter}{\numberline {1}Uvod}{1}{}%
+\contentsline {chapter}{\numberline {2}Glavne definicije i rezultati}{2}{}%
+\contentsline {chapter}{\numberline {3}Razapinjuća stabla}{3}{}%
+\contentsline {chapter}{\numberline {4}Matrični teorem o stablima}{4}{}%
+\contentsline {section}{\numberline {4.1}Laplacian}{4}{}%
+\contentsline {section}{\numberline {4.2}Matrix-Tree teorem}{5}{}%
+\contentsline {chapter}{\numberline {5}Računanje broja razapinjućih stabala pomoću matričnog teorema o stablima}{8}{}%
+\contentsline {chapter}{\numberline {6}Graphelite - računanje broja razapinjućih stabala}{10}{}%
+\contentsline {chapter}{\numberline {7}Zaključak}{11}{}%
+\contentsline {chapter}{Literatura}{12}{}%
