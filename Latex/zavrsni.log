@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  8 MAY 2021 00:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  9 MAY 2021 00:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -571,41 +571,48 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 8.
 
+(a:/texlive/2020/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks42
+\thm@bodyfont=\toks43
+\thm@headfont=\toks44
+\thm@notefont=\toks45
+\thm@headpunct=\toks46
+\thm@preskip=\skip57
+\thm@postskip=\skip58
+\thm@headsep=\skip59
+\dth@everypar=\toks47
+)
+\c@theorem=\count311
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 10
+.
 
 (a:/texlive/2020/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (a:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count311
+\l__kernel_color_stack_int=\count312
 \l__pdf_internal_box=\box65
 )
-(./zavrsni.aux
-
-LaTeX Warning: Label `fig:petersonov' multiply defined.
-
-
-LaTeX Warning: Label `fig:petersonov-broj' multiply defined.
-
-)
+(./zavrsni.aux)
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -643,17 +650,17 @@ LaTeX Font Info:    ... okay on input line 8.
 
 (a:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count312
+\scratchcounter=\count313
 \scratchdimen=\dimen291
 \scratchbox=\box66
-\nofMPsegments=\count313
-\nofMParguments=\count314
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count315
+\nofMPsegments=\count314
+\nofMParguments=\count315
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count316
 \MPscratchDim=\dimen292
-\MPnumerator=\count316
-\makeMPintoPDFobject=\count317
-\everyMPtoPDFconversion=\toks43
+\MPnumerator=\count317
+\makeMPintoPDFobject=\count318
+\everyMPtoPDFconversion=\toks49
 ) (a:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -667,38 +674,32 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count318
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 19
+\c@lstlisting=\count319
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 18
 .
 
 (a:/texlive/2020/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
 
 
 (a:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
 
 
 (a:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{a:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 22
-.
-
-(a:/texlive/2020/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [1] [3] (./zavrsni.toc)
+{a:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [3] (./zavrsni.
+toc)
 \tf@toc=\write4
 \openout4 = `zavrsni.toc'.
 
-
-[4
+ [4
 
 ]
 Poglavlje 1.
@@ -712,94 +713,76 @@ Poglavlje 2.
 Poglavlje 3.
 [3
 
-]
+] [4] [5] [6]
 Poglavlje 4.
-[4
+[7
 
-] [5] [6] [7]
+] [8] [9]
 Poglavlje 5.
-[8
+[10
 
-] [9]
+] [11]
 Poglavlje 6.
-(a:/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [10
+[12
 
-]
-Overfull \hbox (55.43979pt too wide) in paragraph at lines 336--337
-[][][][][][][][][][][][][][][][][][] 
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-48.
-(a:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [11]
-<slike/petersonov.png, id=69, 292.09125pt x 302.3295pt>
+] [13]
+<slike/petersonov.png, id=70, 292.09125pt x 302.3295pt>
 File: slike/petersonov.png Graphic file (type png)
 <use slike/petersonov.png>
-Package pdftex.def Info: slike/petersonov.png  used on input line 384.
+Package pdftex.def Info: slike/petersonov.png  used on input line 617.
 (pdftex.def)             Requested size: 206.28249pt x 213.5206pt.
-<slike/petersonovbroj.png, id=71, 211.38976pt x 316.18124pt>
+<slike/petersonovbroj.png, id=72, 211.38976pt x 316.18124pt>
 File: slike/petersonovbroj.png Graphic file (type png)
 <use slike/petersonovbroj.png>
-Package pdftex.def Info: slike/petersonovbroj.png  used on input line 391.
+Package pdftex.def Info: slike/petersonovbroj.png  used on input line 624.
 (pdftex.def)             Requested size: 206.28249pt x 308.56253pt.
-<slike/kotac2.png, id=72, 322.20375pt x 313.77225pt>
+<slike/kotac2.png, id=73, 322.20375pt x 313.77225pt>
 File: slike/kotac2.png Graphic file (type png)
 <use slike/kotac2.png>
-Package pdftex.def Info: slike/kotac2.png  used on input line 404.
+Package pdftex.def Info: slike/kotac2.png  used on input line 637.
 (pdftex.def)             Requested size: 206.28249pt x 200.89015pt.
- [12 <./slike/petersonov.PNG>]
-<slike/kotacbroj.png, id=77, 264.99pt x 284.86424pt>
+<slike/kotacbroj.png, id=74, 264.99pt x 284.86424pt>
 File: slike/kotacbroj.png Graphic file (type png)
 <use slike/kotacbroj.png>
-Package pdftex.def Info: slike/kotacbroj.png  used on input line 411.
+Package pdftex.def Info: slike/kotacbroj.png  used on input line 644.
 (pdftex.def)             Requested size: 206.28249pt x 221.7542pt.
- [13 <./slike/petersonovbroj.PNG>] [14 <./slike/kotac2.PNG> <./slike/kotacbroj.
-PNG>]
+ [14 <./slike/petersonov.PNG>] [15 <./slike/petersonovbroj.PNG> <./slike/kotac2
+.PNG>] [16 <./slike/kotacbroj.PNG>]
 Poglavlje 7.
-(./zavrsni.bbl [15
+(./zavrsni.bbl [17
 
 ]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [16
+) [18
 
-] [17] (./zavrsni.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] [19] (./zavrsni.aux) ) 
 Here is how much of TeX's memory you used:
- 18639 strings out of 479917
- 340386 string characters out of 5886666
- 818990 words of memory out of 5000000
- 34854 multiletter control sequences out of 15000+600000
- 606101 words of font info for 109 fonts, out of 8000000 for 9000
+ 18363 strings out of 479917
+ 338146 string characters out of 5886666
+ 626633 words of memory out of 5000000
+ 34589 multiletter control sequences out of 15000+600000
+ 602263 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,12n,88p,555b,1649s stack positions out of 5000i,500n,10000p,200000b,80000s
-{a:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<a:/texlive/2020/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><a:/texlive/2020/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><a:/texlive/2020/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi12.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi8.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-<a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><a:/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><a:/texlive/2020/te
-xmf-dist/fonts/type1/urw/courier/ucrro8a.pfb><a:/texlive/2020/texmf-dist/fonts/
-type1/urw/helvetic/uhvb8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/helve
-tic/uhvr8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><a:
-/texlive/2020/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><a:/texlive/2020/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb><a:/texlive/2020/texmf-dist/fonts/type
-1/urw/times/utmr8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8
-a.pfb>
-Output written on zavrsni.pdf (21 pages, 257049 bytes).
+ 77i,14n,88p,555b,855s stack positions out of 5000i,500n,10000p,200000b,80000s
+{a:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc
+}<a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><a:/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><a:/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><a:/texlive/2020/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb><a:/texlive/2020/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr8.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb><a:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><a:/texlive/
+2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><a:/texlive/2020/texmf-dist
+/fonts/type1/urw/times/utmb8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/t
+imes/utmbi8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
+a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zavrsni.pdf (22 pages, 254988 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
+ 144 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
