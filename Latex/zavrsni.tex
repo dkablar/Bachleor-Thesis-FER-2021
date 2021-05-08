@@ -1,6 +1,9 @@
 \documentclass[times, utf8, zavrsni]{fer}
 \usepackage{booktabs}
 \usepackage{tikz}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{listings}
 
 \begin{document}
 
@@ -136,15 +139,15 @@ Za korak indukcije pretpostavljamo graf \textit{G} koji ima barem dva vrha, te o
 			\draw (2) -- (6);
 		\end{tikzpicture}
 	\end{center}
-	\caption*{$G \textbackslash e$}
+	\caption*{$G \backslash e$}
 	\endminipage\hfill
-	\caption{$G - e$ je graf koji se dobije brisanjem brida \textit{e}, a $G \textbackslash e$ je graf koji se dobije kontrakcijom brida \textit{e} i spajanjem incidentnih vrhova u jedan vrh.}
+	\caption{$G - e$ je graf koji se dobije brisanjem brida \textit{e}, a $G \backslash e$ je graf koji se dobije kontrakcijom brida \textit{e} i spajanjem incidentnih vrhova u jedan vrh.}
 \end{figure}
 
-Sada pretpostavimo da je \textit{i} povezan s nekim drugim vrhom \textit{j}, te neka \textit{e} označava brid \textit{(i,j)}. Kao što je prikazano na slici 4.2, postoje dva načina na koje se može modificirati \textit{G}: brid \textit{e} možemo jednostavno izbrisati, ili možemo kontrakcijom vrhove \textit{i} i \textit{j} spojiti u jedan vrh. Takve grafove označujemo s $G - e$ i $G \textbackslash e$. Sada tvrdimo da je broj razapinjučih stabala \textit{T(G)} zadan sa sljedećim rekurzivnim izrazom:
+Sada pretpostavimo da je \textit{i} povezan s nekim drugim vrhom \textit{j}, te neka \textit{e} označava brid \textit{(i,j)}. Kao što je prikazano na slici 4.2, postoje dva načina na koje se može modificirati \textit{G}: brid \textit{e} možemo jednostavno izbrisati, ili možemo kontrakcijom vrhove \textit{i} i \textit{j} spojiti u jedan vrh. Takve grafove označujemo s $G - e$ i $G \backslash e$. Sada tvrdimo da je broj razapinjučih stabala \textit{T(G)} zadan sa sljedećim rekurzivnim izrazom:
 
 \begin{equation}
-	T(G) = T(G - e) + T(G \textbackslash e)
+	T(G) = T(G - e) + T(G \backslash e)
 \end{equation}
 
 Prije nastavka dokaza matričnog teorema o stablima potrebno je dokazati da je izraz (4.1) ispravan. Neka je \textit{e} neki fiksni brid od \textit{G}. Uočimo da se razapinjuća stabla od \textit{G} dijele na:
@@ -155,11 +158,11 @@ Prije nastavka dokaza matričnog teorema o stablima potrebno je dokazati da je i
 Vrijedi: $T(G) = x + y$. Uočimo sada da je:
 \begin{itemize}
 	\item $x = T(G - e)$ jer je svako razapinjuće stablo od \textit{G} koje ne sadrži \textit{e}, ujedno i razapinjuće stablo od $G - e$
-	\item $y = T(G \textbackslash e)$ jer svako razapinjuće stablo od $G \textbackslash e$ možemo dobiti iz razapinjućeg stabla od \textit{G} koje sadrži brid \textit{e} postupkom konkatenacije brida \textit{e} u tom stablu.
+	\item $y = T(G \backslash e)$ jer svako razapinjuće stablo od $G \backslash e$ možemo dobiti iz razapinjućeg stabla od \textit{G} koje sadrži brid \textit{e} postupkom konkatenacije brida \textit{e} u tom stablu.
 \end{itemize}
-Dakle, vrijedi $T(G) = T(G - e) + T(G \textbackslash e)$.
+Dakle, vrijedi $T(G) = T(G - e) + T(G \backslash e)$.
 
-Prtpostavimo sada da matrični teorem vrijedi za $G - e$ i za $G \textbackslash e$. Možemo razmjestiti vrhove od \textit{G} tako da su \textit{i} i \textit{j} prva dva vrha. Sada Laplacian \textit{L} od \textit{G} možemo napisati kao:
+Prtpostavimo sada da matrični teorem vrijedi za $G - e$ i za $G \backslash e$. Možemo razmjestiti vrhove od \textit{G} tako da su \textit{i} i \textit{j} prva dva vrha. Sada Laplacian \textit{L} od \textit{G} možemo napisati kao:
 
 \[
 L_G =
@@ -174,7 +177,7 @@ L_G =
 \end{bmatrix}
 \]
 
-Ovdje \textit{r\textsubscript{i}} i \textit{r\textsubscript{j}} predstavljaju \textit{(n - 2)}-dimenzionalne vektore koji opisuju konekcije vrhova \textit{i} i \textit{j} s ostalih \textit{n - 2} vrha od \textit{G} ($r_i^T$ i $r_j^T$ su transponirani vektori), a \textit{L'} je \textit{(n - 2)}-dimenzionalna minora koja predstavlja \textit{laplacian} ostatka grafa. \textit{Laplaciane} grafova $G - e$ i $G \textbackslash e$ pišemo na sljedeći način:
+Ovdje \textit{r\textsubscript{i}} i \textit{r\textsubscript{j}} predstavljaju \textit{(n - 2)}-dimenzionalne vektore koji opisuju konekcije vrhova \textit{i} i \textit{j} s ostalih \textit{n - 2} vrha od \textit{G} ($r_i^T$ i $r_j^T$ su transponirani vektori), a \textit{L'} je \textit{(n - 2)}-dimenzionalna minora koja predstavlja \textit{laplacian} ostatka grafa. \textit{Laplaciane} grafova $G - e$ i $G \backslash e$ pišemo na sljedeći način:
 
 \[
 L_{G - e} = 
@@ -187,7 +190,7 @@ L_{G - e} =
 		r_i & r_j & L'
 	\end{array}
 \end{bmatrix},
-L_{G \textbackslash e} = 
+L_{G \backslash e} = 
 \begin{bmatrix}
 	\begin{array}{c|c}
 		d_i + d_j - 2 & r_i^T + r_j^T \\
@@ -200,7 +203,7 @@ L_{G \textbackslash e} =
 Da bi se indukcija završila, potrebno je pokazati:
 
 \begin{equation}
-	detL_G^{(ii)} = detL_{G - e}^{(ii)} + detL_{G \textbackslash e}^{(jj)}
+	detL_G^{(ii)} = detL_{G - e}^{(ii)} + detL_{G \backslash e}^{(jj)}
 \end{equation}
 
 ili, u matričnom zapisu:
@@ -297,6 +300,120 @@ Determinanta prethodne matrice, a ujedno i broj razapinjućih stabala grafa sa s
 
 \chapter{Graphelite - računanje broja razapinjućih stabala}
 
+\textit{\textbf{Graphelite}} je web-aplikacija razvijena u 5. semestru u sklopu kolegija \textit{Projekt R} u suradnji s još dvoje kolega. To je aplikacija koja korisniku dopušta da crta jednostavne grafove i nad njima provodi razne algoritme i dobije zanimljive rezultate o nacrtanim grafovima. Moguće je crtati grafove, nacrtanom grafu odrediti najmanje razapinjuće stablo, odrediti duljinu struka (najkraći ciklus), odrediti kromatski broj, obojati vrhove grafa, te izračunati broj razapinjućih stabala.
+
+\section{Računanje broja razapinjućih stabala grafa}
+
+Broj razapinjućih stabala grafa kojeg korisnik nacrta u aplikaciji se računa pomoću matričnog teorema o stablima, teorema koji je obrađen u 4. poglavlju ovoga rada. Odabere li korisnik opciju "Number of trees" pokrenut će se algoritam za izračunavanje broja razapinjućih stabala. Taj algoritam je sljedeći:
+
+
+
+\lstset{language=Java, tabsize=2}
+\begin{lstlisting}
+	function matrixTreeAlgorithm(matrix, n) {
+		
+		var temp = new Array(n);
+		for(i = 0; i < n; i++) {
+			temp[i] = new Array(n);
+		}
+		
+		j = 0, k = 0;
+		for(i = 0; i < matrix.length; i++) {
+			if(matrix[i] >= '0' && matrix[i] <= '1') {
+				temp[j][k++] = Number(matrix[i]);
+				if(k >= n) {
+					k = 0;
+					j++;
+				} 
+			}
+		}
+		
+		var Lmatrix = new Array(n);
+		for(var i = 0; i < n; i++) {
+			Lmatrix[i] = new Array(n);
+		}
+		
+		// racunanje laplaciana na temelju predane matrice susjedstva
+		for(i = 0; i < n; i++) {
+			for(j = 0; j < n; j++) {
+				if(i === j) {
+					var num = 0;
+					for(k = 0; k < n; k++) {
+						if(temp[i][k] == 1) {
+							num++;
+						}
+					}
+					Lmatrix[i][j] = num;
+				} else if(temp[i][j] == 1) {
+					Lmatrix[i][j] = -1;
+				} else {
+					Lmatrix[i][j] = 0;
+				}
+			}
+		}
+		
+		var L11matrix = new Array(n-1);
+		for(var i = 0; i < n-1; i++) {
+			L11matrix[i] = new Array(n);
+		}
+		
+		// brisanje prvog redka i stupca laplaciana
+		for(i = 0; i < n-1; i++) {
+			for(j = 0; j < n-1; j++) {
+				L11matrix[i][j]=Lmatrix[i+1][j+1];
+			}
+		}
+		
+		//racunanje determinante
+		var noOfTrees = determinant(L11matrix);
+		// broj razapinjucih stabala
+		return noOfTrees;
+	}
+\end{lstlisting}
+
+\section{Demonstracija rada programa}
+
+Prikazat ćemo rad algoritma za računanje broja razapinjućih stabala na primjerima Petersonovog grafa, i kotača sa 6 vrhova, \textit{W\textsubscript{6}}.
+
+\subsection{Petersonov graf}
+
+Na slici 6.1 se vidi Petersonov graf nacrtan u aplikaciji \textit{Graphelite}.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{slike/petersonov.png}
+	\caption{Petersonov graf}
+	\label{fig:petersonov}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{slike/petersonovbroj.png}
+	\caption{Broj razapinjućih stabala Petersonovog grafa}
+	\label{fig:petersonov-broj}
+\end{figure}
+
+Na slici 6.2 vidi se matrica susjedstva Petersonovog grafa te broj razapinjućih stabala istog. Vidimo da je taj broj 2000.
+
+\subsection{Kotač sa 6 vrhova, \textit{W\textsubscript{6}}}
+
+Na slici 6.3 se vidi graf kotač s 6 vrhova, \textit{W\textsubscript{6}} nacrtan u aplikaciji \textit{Graphelite}.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{slike/kotac2.png}
+	\caption{Petersonov graf}
+	\label{fig:petersonov}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{slike/kotacbroj.png}
+	\caption{Broj razapinjućih stabala Petersonovog grafa}
+	\label{fig:petersonov-broj}
+\end{figure}
+
+Na slici 6.4 vidi se matrica susjedstva za \textit{W\textsubscript{6}} te broj razapinjućih stabala istog. Vidimo da je taj broj 121.
 \chapter{Zaključak}
 Zaključak.
 

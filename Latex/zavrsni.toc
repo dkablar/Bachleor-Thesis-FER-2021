@@ -7,5 +7,9 @@
 \contentsline {section}{\numberline {4.2}Matrix-Tree teorem}{5}{}%
 \contentsline {chapter}{\numberline {5}Računanje broja razapinjućih stabala pomoću matričnog teorema o stablima}{8}{}%
 \contentsline {chapter}{\numberline {6}Graphelite - računanje broja razapinjućih stabala}{10}{}%
-\contentsline {chapter}{\numberline {7}Zaključak}{11}{}%
-\contentsline {chapter}{Literatura}{12}{}%
+\contentsline {section}{\numberline {6.1}Računanje broja razapinjućih stabala grafa}{10}{}%
+\contentsline {section}{\numberline {6.2}Demonstracija rada programa}{12}{}%
+\contentsline {subsection}{\numberline {6.2.1}Petersonov graf}{12}{}%
+\contentsline {subsection}{\numberline {6.2.2}Kotač sa 6 vrhova, \textit {W\textsubscript {6}}}{13}{}%
+\contentsline {chapter}{\numberline {7}Zaključak}{15}{}%
+\contentsline {chapter}{Literatura}{16}{}%
