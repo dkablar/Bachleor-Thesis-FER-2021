@@ -6,6 +6,7 @@
 \usepackage{listings}
 \usepackage{amsthm}
 \newtheorem{theorem}{Teorem}[section]
+\newtheorem{definition}{Definicija}[section]
 
 \begin{document}
 
@@ -33,6 +34,179 @@ U trećem dijelu ću iskazati i dokazati matrični teorem o stablima.
 U četvrtom dijelu ću, koristeći prethodno dokazani teorem, iznijeti rezultate za primjere pojedinačnih grafova, kao i za grafove s proizvoljnim brojem vrhova, n. U petom dijelu, bit će opisan relevantan (za razapinjuća stabla) dio aplikacije \textit{Graphelite} koja je razvijena u sklopu kolegija \textit{Projekt R} u 5. semestru, te će se na primjerima prikazati njezin rad. Naposljetku će biti donesen zaključak o svemu što je napravljeno.
 
 \chapter{Glavne definicije i rezultati}
+
+Obzirom da će se u ovom radu obrađivati određeni problemi teorije grafova, vrijeme je da se upoznamo sa pojmom grafa.
+
+\begin{definition}
+	\textbf{Jednostavni graf} G sastoji se od nepraznog konačnog skupa $V(G)$, čije elemente zovemo \textbf{vrhovi} grafa G i konačnog skupa $E(G)$ različitih dvočlanih podskupova skupa $V(G)$ koje zovemo \textbf{bridovi}.
+\end{definition}
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={30mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {$1$}; 
+		\node[main] (2) [right of=1] {$2$};
+		\node[main] (3) [below of=1] {$4$};
+		\node[main] (4) [left of=3] {$3$};
+		\node[main] (5) [right of=3] {$5$};
+		\node[main] (6) [right of=5] {$6$};
+		\draw (1) -- (3);
+		\draw (1) -- (4);
+		\draw (1) -- (5);
+		\draw (1) -- (6);
+		\draw (2) -- (3);
+		\draw (2) -- (4);
+		\draw (2) -- (5);
+		\draw (2) -- (6);
+	\end{tikzpicture}
+	\caption{Primjer jednostavnog grafa.}
+\end{figure}
+
+Primijetimo da smo prethodnom definicijom onemogućili pojavljivanje \textit{petlji} (bridovi koji vrh spajaju sa samim sobom), te da dva vrha mogu biti povezana s više bridova. Omogućimo li to, govorimo o \textit{općem grafu}. Sljedeće svojstvo koje će u nastavku biti zanimljivo je \textit{stupanj vrha}.
+
+\begin{definition}
+	\textbf{Stupanj vrha} \textit{v} grafa \textit{G} je broj vrhova koji su incidentni s \textit{v}. Označavamo ga s \textit{deg(v)}.
+\end{definition}
+
+Za graf sa slike 2.1, $deg(1) = deg(2) = 4$ i $deg(3) = deg(4) = deg(5) = deg(6) = 2$.
+
+Također, u nastavku će nam biti važan pojam podgrafa grafa.
+
+\begin{definition}
+	\textbf{Podgraf} grafa \textit{G} je graf čiji vrhovi pripadaju skupu $V(G)$ , a bridovi skupu $E(G)$.
+\end{definition}
+
+Za graf sa slike 2.1, jedan od podgrafova je i onaj sa slike 2.2.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={30mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {}; 
+		\node[main] (2) [right of=1] {};
+		\node[main] (3) [below of=1] {};
+		\node[main] (4) [below of=2] {};
+		\draw (1) -- (3);
+		\draw (1) -- (4);
+		\draw (2) -- (3);
+		\draw (2) -- (4);
+	\end{tikzpicture}
+	\caption{Primjer podgrafa grafa sa slike 2.1.}
+\end{figure}
+
+Nakon što su izneseni neki važni rezultati o samim grafovima, treba se osvrnuti i na njihovo predstavljanje.
+
+\begin{definition}
+	Označimo li vrhove zadanog grafa G s $V = {1, 2, 3,..., n}$, onda definiramo \textbf{matricu susjedstva} $A = [a_{ij}]$ kao n x n matricu čiji je element $a_{ij}$ jednak broju bridova koji spaja vrh i s vrhom j.
+\end{definition}
+
+Za graf sa slike 2.1, pripadna matrica susjedstva je sljedeća:
+
+\[
+\centering
+A = 
+\begin{bmatrix}
+	0 & 0 & 1 & 1 & 1 & 1 \\
+	0 & 0 & 1 & 1 & 1 & 1\\
+	1 & 1 & 0 & 0 & 0 & 0 \\
+	1 & 1 & 0 & 0 & 0 & 0 \\
+	1 & 1 & 0 & 0 & 0 & 0 \\
+	1 & 1 & 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+Uočimo da zbroj elemenata u pojedinom retku, ili stupcu, odgovara stupnju pripadajućeg vrha.
+
+\begin{definition}
+	Označe li se dodatno i bridovi zadanog grafa G s $E = {1, 2, 3, ..., m}$, onda definiramo \textbf{matricu incidencije} kao n x m matricu $B = [b_{ij}]$ čiji su elementi jednaki 1 ako je vrh 1 incidentan s vrhom j, a 0 inače.
+\end{definition}
+
+Za graf sa slike 2.1, pripadajuća matrica incidencije je sljedeća:
+
+\[
+\centering
+B = 
+\begin{bmatrix}
+	1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+	1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+	0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+	0 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+	0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{bmatrix}
+\]
+
+Sada, kada smo se upoznali s glavnim rezultatima vezanim za grafove, vrijeme je da fokus prijeđe na \textbf{stabla}.
+
+\begin{definition}
+	\textbf{Šuma} je graf bez ciklusa, a povezanu šumu zovemo \textbf{stablo}.
+\end{definition}
+
+Na slici 2.3 možemo vidjeti nekoliko stabala.
+
+\begin{figure}[htb]
+	\minipage{0.33\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above left of=1] {};
+			\node[main] (3) [above right of=1] {};
+			\node[main] (4) [right of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\node[main] (6) [below left of=1] {};
+			\node[main] (7) [left of=1] {};
+			\draw (1) -- (2);
+			\draw (1) -- (3);
+			\draw (1) -- (4);
+			\draw (1) -- (5);
+			\draw (1) -- (6);
+			\draw (1) -- (7);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.33\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above left of=1] {};
+			\node[main] (3) [above right of=1] {};
+			\node[main] (4) [right of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\node[main] (6) [below left of=1] {};
+			\node[main] (7) [left of=1] {};
+			\draw (1) -- (2);
+			\draw (2) -- (3);
+			\draw (1) -- (4);
+			\draw (4) -- (5);
+			\draw (1) -- (6);
+			\draw (6) -- (7);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.33\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above left of=1] {};
+			\node[main] (3) [above right of=1] {};
+			\node[main] (4) [right of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\node[main] (6) [below left of=1] {};
+			\node[main] (7) [left of=1] {};
+			\draw (1) -- (2);
+			\draw (1) -- (5);
+			\draw (3) -- (4);
+			\draw (4) -- (5);
+			\draw (2) -- (7);
+			\draw (6) -- (7);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\caption{Primjer stabala s 7 vrhova.}
+\end{figure}
+
+Primjetimo da svako stablo ima točno $n - 1$ bridova, gdje je \textit{n} broj vrhova grafa.
+
+Sada smo se upoznali sa pojmom stabla. U nastavku će biti više govora o \textbf{razapinjućim stablima}.
 
 \chapter{Razapinjuća stabla}
 
@@ -67,7 +241,7 @@ Prvi primjer je graf kotač, odnosno \textit{W\textsubscript{n}}. Kotač je graf
 		\draw (6) -- (7);
 		\draw (7) -- (2);
 	\end{tikzpicture}
-	\caption{Kotač $W_6$}
+	\caption{Kotač $W_6$.}
 \end{figure}
 
 Jedan primjer kotača je i $W_6$ prikazan na slici 3.1.

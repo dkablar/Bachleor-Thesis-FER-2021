@@ -1,17 +1,17 @@
 \babel@toc {croatian}{}
 \contentsline {chapter}{\numberline {1}Uvod}{1}{}%
 \contentsline {chapter}{\numberline {2}Glavne definicije i rezultati}{2}{}%
-\contentsline {chapter}{\numberline {3}Razapinjuća stabla}{3}{}%
-\contentsline {section}{\numberline {3.1}Broj razapinjućih stabala - primjeri}{3}{}%
-\contentsline {subsection}{\numberline {3.1.1}Kotač, \textit {W\textsubscript {n}}}{3}{}%
-\contentsline {chapter}{\numberline {4}Matrični teorem o stablima}{7}{}%
-\contentsline {section}{\numberline {4.1}Laplacian}{7}{}%
-\contentsline {section}{\numberline {4.2}Matrix-Tree teorem}{8}{}%
-\contentsline {chapter}{\numberline {5}Računanje broja razapinjućih stabala pomoću matričnog teorema o stablima}{10}{}%
-\contentsline {chapter}{\numberline {6}Graphelite - računanje broja razapinjućih stabala}{12}{}%
-\contentsline {section}{\numberline {6.1}Računanje broja razapinjućih stabala grafa}{12}{}%
-\contentsline {section}{\numberline {6.2}Demonstracija rada programa}{14}{}%
-\contentsline {subsection}{\numberline {6.2.1}Petersonov graf}{14}{}%
-\contentsline {subsection}{\numberline {6.2.2}Kotač sa 6 vrhova, \textit {W\textsubscript {5}}}{14}{}%
-\contentsline {chapter}{\numberline {7}Zaključak}{17}{}%
-\contentsline {chapter}{Literatura}{18}{}%
+\contentsline {chapter}{\numberline {3}Razapinjuća stabla}{5}{}%
+\contentsline {section}{\numberline {3.1}Broj razapinjućih stabala - primjeri}{5}{}%
+\contentsline {subsection}{\numberline {3.1.1}Kotač, \textit {W\textsubscript {n}}}{5}{}%
+\contentsline {chapter}{\numberline {4}Matrični teorem o stablima}{9}{}%
+\contentsline {section}{\numberline {4.1}Laplacian}{9}{}%
+\contentsline {section}{\numberline {4.2}Matrix-Tree teorem}{10}{}%
+\contentsline {chapter}{\numberline {5}Računanje broja razapinjućih stabala pomoću matričnog teorema o stablima}{12}{}%
+\contentsline {chapter}{\numberline {6}Graphelite - računanje broja razapinjućih stabala}{14}{}%
+\contentsline {section}{\numberline {6.1}Računanje broja razapinjućih stabala grafa}{14}{}%
+\contentsline {section}{\numberline {6.2}Demonstracija rada programa}{16}{}%
+\contentsline {subsection}{\numberline {6.2.1}Petersonov graf}{16}{}%
+\contentsline {subsection}{\numberline {6.2.2}Kotač sa 6 vrhova, \textit {W\textsubscript {5}}}{16}{}%
+\contentsline {chapter}{\numberline {7}Zaključak}{19}{}%
+\contentsline {chapter}{Literatura}{20}{}%
