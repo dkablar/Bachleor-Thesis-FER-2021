@@ -167,18 +167,22 @@ Na slici 2.3 možemo vidjeti nekoliko stabala.
 	\begin{center}
 		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
 			\node[main] (1) {}; 
-			\node[main] (2) [above left of=1] {};
-			\node[main] (3) [above right of=1] {};
-			\node[main] (4) [right of=1] {};
-			\node[main] (5) [below right of=1] {};
-			\node[main] (6) [below left of=1] {};
-			\node[main] (7) [left of=1] {};
-			\draw (1) -- (2);
-			\draw (2) -- (3);
-			\draw (1) -- (4);
-			\draw (4) -- (5);
-			\draw (1) -- (6);
-			\draw (6) -- (7);
+			\node[main] (2) [below of=1] {};
+			\node[main] (3) [right of=1] {};
+			\node[main] (4) [right of=2] {};
+			\node[main] (5) [above of=3] {};
+			\node[main] (6) [below of=4] {};
+			\node[main] (7) [below right of=5] {};
+			\node[main] (8) [above right of=6] {};
+			\node[main] (9) [below right of=7] {};
+			\draw (1) -- (3);
+			\draw (2) -- (4);
+			\draw (5) -- (7);
+			\draw (6) -- (8);
+			\draw (8) -- (9);
+			\draw (7) -- (9);
+			\draw (3) -- (7);
+			\draw (4) -- (8);
 		\end{tikzpicture}
 	\end{center}
 	\endminipage\hfill
@@ -192,16 +196,20 @@ Na slici 2.3 možemo vidjeti nekoliko stabala.
 			\node[main] (5) [below right of=1] {};
 			\node[main] (6) [below left of=1] {};
 			\node[main] (7) [left of=1] {};
+			\node[main] (8) [below right of=6] {};
+			\node[main] (9) [above right of=2] {};
 			\draw (1) -- (2);
 			\draw (1) -- (5);
 			\draw (3) -- (4);
 			\draw (4) -- (5);
 			\draw (2) -- (7);
 			\draw (6) -- (7);
+			\draw (5) -- (8);
+			\draw (2) -- (9);
 		\end{tikzpicture}
 	\end{center}
 	\endminipage\hfill
-	\caption{Primjer stabala s 7 vrhova.}
+	\caption{Primjeri stabala.}
 \end{figure}
 
 Primjetimo da svako stablo ima točno $n - 1$ bridova, gdje je \textit{n} broj vrhova grafa.
@@ -209,6 +217,32 @@ Primjetimo da svako stablo ima točno $n - 1$ bridova, gdje je \textit{n} broj v
 Sada smo se upoznali sa pojmom stabla. U nastavku će biti više govora o \textbf{razapinjućim stablima}.
 
 \chapter{Razapinjuća stabla}
+
+\begin{definition}
+	\textbf{Razapinjući podgraf} zadanog grafa $G = (V, E)$ s $n$ vrhova je svaki podgraf $G' = (V, E')$ grafa $G$ s istim skupom vrhova kao i $G$, dakle također s $n$ vrhova.
+\end{definition}
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={45mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {$S$}; 
+		\node[main] (2) [right of=1] {$K$};
+		\node[main] (3) [below of=1] {$G$};
+		\node[main] (4) [below of=2] {$N$};
+		\node[main] (5) [above right of=1] {$Z$};
+		\draw (1) -- node[midway, above right, sloped] {\textit{77.4}} (4);
+		\draw (2) -- node[midway, above right, sloped] {\textit{79.3}} (3);
+		\draw (1) -- node[midway, above] {\textit{44.3}} (2);
+		\draw (1) -- node[midway, above left] {\textit{35.3}} (3);
+		\draw (2) -- node[midway, above right] {\textit{28.1}} (4);
+		\draw (3) -- node[midway, above] {\textit{100}} (4);
+		\draw (1) -- node[midway, above right, sloped] {\textit{58.9}} (5);
+		\draw (2) -- node[midway, above right, sloped] {\textit{82.8}} (5);
+	\end{tikzpicture}
+	\caption{Primjer podgrafa grafa sa slike 2.1.}
+\end{figure}
+
+Kao što vidimo, tema razapinjućih stabala je interesantna u mnogim područjima. U nastavku rada neću tražiti određeno razapinjuće stablo za zadani graf, već ću se baviti općenitijim problemom, pitanjem koliko razapinjućih stabala neki graf $G$ uopće ima. 
 
 \section{Broj razapinjućih stabala - primjeri}
 
@@ -484,6 +518,8 @@ Cilj je da na lijevoj strani ostane jedinična matrica, i onda će vrijednosti s
 T(W_n) = (\dfrac{3 + \sqrt{5}}{2})^n + (\dfrac{3 - \sqrt{5}}{2})^n - 2
 \end{equation}
 
+Sada, kada su navedene osnovne definicije vezane za razapinjuća stabla, i kada je naveden primjer pronalaženja eksplicitne formule za broj razapinjućih stabala grafa kotača, vrijeme je da se upoznamo s centralnim teoremom ovog rada, teoremom koji će nam dati recept za izračun broja razapinjućih stabala proizvoljnog grafa.
+
 \chapter{Matrični teorem o stablima}
 
 Cilj ovog poglavlja je izvesti rezultat koji broj razapinjućih stabala grafa računa kao determinantu matrice čije vrijednosti ovise o grafu. Te matrice nazivaju se \textit{Laplacijani}.
@@ -738,6 +774,75 @@ L^{(22)} =
 
 Determinanta prethodne matrice, a ujedno i broj razapinjućih stabala grafa sa slike 5.1 je: $T(G) = det L^{(22)} = 40$. Jednak bi se rezultat dobio da smo matricu \textit{L\textsuperscript{(ii)}} stvorili tako da smo maknuli bilo koji drugi redak i stupac matrice \textit{L}.
 
+\section{Računanje broja razapinjućih stabala potpunog grafa s \textit{n} vrhova, \textit{K\textsubscript{n}}}
+
+U \textbf{\textit{dodaj poveznicu na skriptu iz diskretne}} iznesen je rezultat da potpuni graf s $n$ vrhova, $K_n$, ima $n^{n-2}$ razapinjućih stabala. Sada ću taj rezultat prikazati preko matričnog teorema o stablima.
+
+Za potpuni graf $K_n$ s $n$ vrhova, pripadajuća matrica susjedstva je sljedeća:
+
+\[
+\centering
+A = 
+\begin{bmatrix}
+	0 & 1 & 1 & ... & 1 & 1 \\
+	1 & 0 & 1 & 1 & ... & 1 \\
+	... & ... & ... & & ... & ...  \\
+	1 & 1 & ... & & 1 & 0
+\end{bmatrix}
+\]
+
+Pripadni \textit{laplacian} je:
+
+\[
+\centering
+L = 
+\begin{bmatrix}
+	n-1 & -1 & -1 & ... & -1 & -1 \\
+	-1 & n-1 & -1 & -1 & ... & -1 \\
+	... & ... & ... & & ... & ...  \\
+	-1 & -1 & ... & & -1 & n-1
+\end{bmatrix}
+\]
+
+Primjetimo da će minora te matrice, $L^{(ii)}$ biti ista bez obzira koji $i$ odabrali. Ta je matrica sljedeća:
+
+\[
+\centering
+L^{(ii)} = 
+\begin{bmatrix}
+	n-1 & -1 & -1 & ... & -1 & -1 \\
+	-1 & n-1 & -1 & -1 & ... & -1 \\
+	... & ... & ... & & ... & ...  \\
+	-1 & -1 & ... & & -1 & n-1
+\end{bmatrix}
+\]
+
+Sada je potrebno izračunati determinantu prethodne matrice. Počinjemo tako da prvom retku zbrojimo sve ostale retke matrice. Dobit ćemo:
+
+\[
+\centering
+\begin{bmatrix}
+	1 & 1 & 1 & ... & 1 & 1 \\
+	-1 & n-1 & -1 & -1 & ... & -1 \\
+	... & ... & ... & & ... & ...  \\
+	-1 & -1 & ... & & -1 & n-1
+\end{bmatrix}
+\]
+
+Sada ćemo prvi redak dodati svim ostalim retcima u matrici, te ćemo dobiti sljedeće:
+
+\[
+\centering
+\begin{bmatrix}
+	1 & 1 & 1 & ... & 1 & 1 \\
+	0 & n & 0 & 0 & ... & 0 \\
+	... & ... & ... & & ... & ...  \\
+	0 & 0 & ... & & 0 & n
+\end{bmatrix}
+\]
+
+Primjetimo da smo dobili gornju trokutastu matricu, a njena determinanta je jednaka umnošku elemenata na dijagonali, tako da je broj razapinjućih stabala potpunog grafa s $n$ vrhova, $T(K_n) = n^{n-2}$, što se poklapa s očekivanim rezultatom.
+
 \chapter{Graphelite - računanje broja razapinjućih stabala}
 
 \textit{\textbf{Graphelite}} je web-aplikacija razvijena u 5. semestru u sklopu kolegija \textit{Projekt R} u suradnji s još dvoje kolega. To je aplikacija koja korisniku dopušta da crta jednostavne grafove i nad njima provodi razne algoritme i dobije zanimljive rezultate o nacrtanim grafovima. Moguće je crtati grafove, nacrtanom grafu odrediti najmanje razapinjuće stablo, odrediti duljinu struka (najkraći ciklus), odrediti kromatski broj, obojati vrhove grafa, te izračunati broj razapinjućih stabala.
@@ -833,7 +938,6 @@ Sažetak na hrvatskom jeziku.
 \kljucnerijeci{grafovi, stabla, razapinjuća stabla, matrix-tree teorem}
 \end{sazetak}
 
-% TODO: Navedite naslov na engleskom jeziku.
 \engtitle{Counting the spanning trees}
 \begin{abstract}
 Abstract.
