@@ -28,9 +28,38 @@ Zahvaljuem svojim roditeljima, pogotovo majci, koji su me podržavali u svakoj o
 \tableofcontents
 
 \chapter{Uvod}
-U prvom dijelu ću iznijeti glavne definicije i rezultate vezane uz grafove i stabla. U drugom dijelu će biti govora o razapinjućim stablima. Pritom ću iznijeti neke osnovne rezultate te primjere teorijskog računanja broja razapinjučih stabala. 
-U trećem dijelu ću iskazati i dokazati matrični teorem o stablima. 
 
+Teorija grafova široko je područje s mnogim primjenama u stvarnom svijetu. Njen začetak vezan je uz jedan problem iz stvarnog života. Članak iz 1736. u kojem je švicarski matematičar Leonhard Euler predstavio i rješio problem königsbergskih mostova smatra se prvim pisanim djelom o \textit{teoriji grafova}. No, sam pojam grafa je u široku uporabu ušao tek 1936., kada je Dénes Kőnig objavio monografiju \textit{Theory of finite and infinite graphs}\footnote{engleski prijevod njemačkog originala \textit{Theorie der endlichen und unendlichen Graphen}}.
+Ta se godina uzima kao godina osnutka \textit{teorije grafova} kao zasebne matematičke discipline.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={45mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {$A$}; 
+		\node[main] (2) [above left of=1] {$B$};
+		\node[main] (3) [below left of=1] {$C$};
+		\node[main] (4) [right of=1] {$D$};
+		\draw (1) -- (2);
+		\draw (1)  to [out=175,in=270,looseness=1.5] (2);
+		\draw (1) -- (3);
+		\draw (1)  to [out=185,in=90,looseness=1.5] (3);
+		\draw (1) -- (4);
+		\draw (2) -- (4);
+		\draw (3) -- (4);
+	\end{tikzpicture}
+	\caption{Graf koji prikazuje problem königsbergskih mostova.}
+\end{figure}
+
+Svoj zamah teorija grafova dobiva tek u drugoj polovici 20. stoljeća, te s obzirom da je to još uvijek relativno nova disciplina, puno je otvorenih problema koji i danas još uvijek nisu rješeni.
+
+Teorija grafova se primjenjuje u mnogim područjima. U računarskoj znanosti, grafovi su od velikog interesa, što kao struktura podataka, što zbog algoritama koji se nad njima mogu pisati, i raznih drugih primjena. Primjerice, grafovi mogu koristiti u izgradnji \textit{NoSQL} baza podataka, gdje se u čvorove mogu spremati podatci, a u bridove veze između podataka.
+
+U socijalnim znanostima, korištenjem softvera za analizu društvenih mreža, teorija grafova se može koristiti, primjerice, za istraživanje širenja neke glasine. U molekularnoj biologiji, grafovi se koriste za modeliranje i analizu podataka s kompleksnim međusobnim vezama. Osim navedenih, grafovi imaju svoje primjene i u lingvistici, fizici, kemiji, matematici, i mnogim drugima.
+
+U ovom radu bit će više riječi o podvrsti grafova, \textit{stablima}. Stabla mogu, također, biti od velikog značaja u mnogim granama. Primjerice, recimo da se cestom želi povezati nekoliko gradova. Kako bi izvođači radova što jefitnije te radove obavili, pokušat će naći \textit{minimalno razapinjuće stablo} grafa koji će predstavljati te gradove i udaljenosti između njih. O ovom, i sličnim problemima, bit će više riječi u kasnijim poglavljima ovog rada.
+
+U prvom dijelu ću iznijeti glavne definicije i rezultate vezane uz grafove i stabla. U drugom dijelu će biti govora o razapinjućim stablima. Pritom ću iznijeti neke osnovne rezultate te primjere teorijskog računanja broja razapinjučih stabala. 
+U trećem dijelu ću iskazati i dokazati matrični teorem o stablima.
 U četvrtom dijelu ću, koristeći prethodno dokazani teorem, iznijeti rezultate za primjere pojedinačnih grafova, kao i za grafove s proizvoljnim brojem vrhova, n. U petom dijelu, bit će opisan relevantan (za razapinjuća stabla) dio aplikacije \textit{Graphelite} koja je razvijena u sklopu kolegija \textit{Projekt R} u 5. semestru, te će se na primjerima prikazati njezin rad. Naposljetku će biti donesen zaključak o svemu što je napravljeno.
 
 \chapter{Glavne definicije i rezultati}
@@ -62,7 +91,45 @@ Obzirom da će se u ovom radu obrađivati određeni problemi teorije grafova, vr
 	\caption{Primjer jednostavnog grafa.}
 \end{figure}
 
-Primijetimo da smo prethodnom definicijom onemogućili pojavljivanje \textit{petlji} (bridovi koji vrh spajaju sa samim sobom), te da dva vrha mogu biti povezana s više bridova. Omogućimo li to, govorimo o \textit{općem grafu}. Sljedeće svojstvo koje će u nastavku biti zanimljivo je \textit{stupanj vrha}.
+Vratimo li se na sliku 1.1, primjetit ćemo da je moguće da vrhove nekog grafa povezuje više bridova, te također da jedan vrh ima brid kojemu je on i početni i krajnji vrh. Takav brid zove se \textit{petlja}. Definicija jednostavnih grafova nam višestruke bridove i petlje brani. Oni će biti od većeg interesa u nastavku ovog rada.
+
+Niz različitih bridova $e_1e_2...e_k$ nazivamo \textit{stazom} ako možemo konstruirati šetnju u našem grafu tako da prvo prođemo kroz brid $e_1$, zatim kroz $e_2$ i tako dalje. Važno je da je krajnji vrh brida $e_i$ ujedno i početni vrh brida $e_{i+1}$. Ako stazu završimo u istom vrhu u kojem smo započeli te ako smo u konstruiranju staze iskoristili sve bridove od $G$, onda tu stazu nazivamo \textit{eulerovom stazom}. Također, ako staza niti jedan vrh ne dotakne dvaput, onda govorimo o \textit{putu}. Za takav graf, u kojem postoji šetnja koja počinje i završava u istom grafu, kažemo da sadrži \textit{ciklus}.
+
+Na grafu sa slike 2.1 možemo konstruirati \textit{eulerovu stazu}. 
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={30mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {$1$}; 
+		\node[main] (2) [right of=1] {$2$};
+		\node[main] (3) [below of=1] {$3$};
+		\node[main] (4) [right of=3] {$4$};
+		\node[main] (5) [above left of=1] {$5$};
+		\node[main] (6) [below left of=3] {$6$};
+		\node[main] (7) [above right of=2] {$7$};
+		\node[main] (8) [below right of=4] {$8$};
+		\draw (1) -- (3);
+		\draw (1) -- (5);
+		\draw (1) -- (6);
+		\draw (3) -- (5);
+		\draw (3) -- (6);
+		\draw (2) -- (7);
+		\draw (2) -- (4);
+		\draw (4) -- (8);
+		\draw (7) -- (8);
+	\end{tikzpicture}
+	\caption{Primjer nepovezanog grafa.}
+\end{figure}
+
+\newpage
+
+Na slici 2.2 vidimo graf koji se može promatrati kao unija dva grafa. Vidimo da postaje dva vrha između kojih ne možemo konstruirati put (primjerice 1 i 2). Ovakve grafove zovemo \textit{nepovezanim grafovima}. Za nastavak, više će nam značiti \textit{povezani grafovi}.
+
+\begin{definition}
+	Ako graf G ima svojstvo da između svaka dva vrha možemo konstruirati put, onda možemo reći da je G \textbf{povezan graf}.
+\end{definition}
+
+Graf sa slike 2.1 je primjer povezanog grafa.
 
 \begin{definition}
 	\textbf{Stupanj vrha} \textit{v} grafa \textit{G} je broj vrhova koji su incidentni s \textit{v}. Označavamo ga s \textit{deg(v)}.
@@ -76,7 +143,7 @@ Također, u nastavku će nam biti važan pojam podgrafa grafa.
 	\textbf{Podgraf} grafa \textit{G} je graf čiji vrhovi pripadaju skupu $V(G)$ , a bridovi skupu $E(G)$.
 \end{definition}
 
-Za graf sa slike 2.1, jedan od podgrafova je i onaj sa slike 2.2.
+Za graf sa slike 2.1, jedan od podgrafova je i graf na slici 2.3.
 
 \begin{figure}[htb]
 	\centering
@@ -92,6 +159,8 @@ Za graf sa slike 2.1, jedan od podgrafova je i onaj sa slike 2.2.
 	\end{tikzpicture}
 	\caption{Primjer podgrafa grafa sa slike 2.1.}
 \end{figure}
+
+\newpage
 
 Nakon što su izneseni neki važni rezultati o samim grafovima, treba se osvrnuti i na njihovo predstavljanje.
 
@@ -114,7 +183,7 @@ A =
 \end{bmatrix}
 \]
 
-Uočimo da zbroj elemenata u pojedinom retku, ili stupcu, odgovara stupnju pripadajućeg vrha.
+Zanimljivo je primjetiti da zbroj svih elemenata u pojedinom retku ili stupcu, točno korespondira stupnju pripadajućeg vrha.
 
 \begin{definition}
 	Označe li se dodatno i bridovi zadanog grafa G s $E = {1, 2, 3, ..., m}$, onda definiramo \textbf{matricu incidencije} kao n x m matricu $B = [b_{ij}]$ čiji su elementi jednaki 1 ako je vrh 1 incidentan s vrhom j, a 0 inače.
@@ -141,7 +210,7 @@ Sada, kada smo se upoznali s glavnim rezultatima vezanim za grafove, vrijeme je 
 	\textbf{Šuma} je graf bez ciklusa, a povezanu šumu zovemo \textbf{stablo}.
 \end{definition}
 
-Na slici 2.3 možemo vidjeti nekoliko stabala.
+Na slici 2.4 možemo vidjeti nekoliko stabala.
 
 \begin{figure}[htb]
 	\minipage{0.33\textwidth}
@@ -214,13 +283,169 @@ Na slici 2.3 možemo vidjeti nekoliko stabala.
 
 Primjetimo da svako stablo ima točno $n - 1$ bridova, gdje je \textit{n} broj vrhova grafa.
 
-Sada smo se upoznali sa pojmom stabla. U nastavku će biti više govora o \textbf{razapinjućim stablima}.
+Sada smo se upoznali sa pojmom stabla. U nastavku će biti više govora o \textbf{razapinjućim stablima}. Također, u nastavku će nas zanimati samo jednostavni i povezani grafovi, tako da to neću svaki put eksplicitno naglašavati.
 
 \chapter{Razapinjuća stabla}
 
 \begin{definition}
 	\textbf{Razapinjući podgraf} zadanog grafa $G = (V, E)$ s $n$ vrhova je svaki podgraf $G' = (V, E')$ grafa $G$ s istim skupom vrhova kao i $G$, dakle također s $n$ vrhova.
 \end{definition}
+
+\begin{figure}[htb]
+	\minipage{0.5\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above left of=1] {};
+			\node[main] (3) [below left of=1] {};
+			\node[main] (4) [above right of=2] {};
+			\node[main] (5) [below right of=3] {};
+			\node[main] (6) [above right of=4] {};
+			\node[main] (7) [above right of=1] {};
+			\node[main] (8) [below right of=1] {};
+			\node[main] (9) [below right of=5] {};
+			\node[main] (10) [above right of=9] {};
+			\node[main] (11) [below right of=6] {};
+			\node[main] (12) [above right of=8] {};
+			\node[main] (13) [above right of=12] {};
+			\node[main] (14) [below right of=12] {};
+			\node[main] (15) [below left of=2] {};
+			\node[main] (16) [above right of=14] {};
+			\draw (1) -- (8);
+			\draw (1) -- (7);
+			\draw (7) -- (12);
+			\draw (1) -- (15);
+			\draw (1) -- (2);
+			\draw (1) -- (3);
+			\draw (4) -- (7);
+			\draw (12) -- (13);
+			\draw (11) -- (13);
+			\draw (4) -- (6);
+			\draw (13) -- (16);
+			\draw (5) -- (9);
+			\draw (9) -- (10);
+			\draw (8) -- (10);
+			\draw (10) -- (14);
+			\draw (8) -- (12);
+			\draw (1) -- (12);
+			\draw (7) -- (13);
+			\draw (7) -- (11);
+			\draw (4) -- (11);
+			\draw (6) -- (11);
+			\draw (2) -- (4);
+			\draw (2) -- (7);
+			\draw (2) -- (15);
+			\draw (3) -- (15);
+			\draw (3) -- (5);
+			\draw (3) -- (8);
+			\draw (5) -- (8);
+			\draw (5) -- (10);
+			\draw (8) -- (14);
+			\draw (12) -- (14);
+			\draw (12) -- (16);
+			\draw (14) -- (16);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.5\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above left of=1] {};
+			\node[main] (3) [below left of=1] {};
+			\node[main] (4) [above right of=2] {};
+			\node[main] (5) [below right of=3] {};
+			\node[main] (6) [above right of=4] {};
+			\node[main] (7) [above right of=1] {};
+			\node[main] (8) [below right of=1] {};
+			\node[main] (9) [below right of=5] {};
+			\node[main] (10) [above right of=9] {};
+			\node[main] (11) [below right of=6] {};
+			\node[main] (12) [above right of=8] {};
+			\node[main] (13) [above right of=12] {};
+			\node[main] (14) [below right of=12] {};
+			\node[main] (15) [below left of=2] {};
+			\node[main] (16) [above right of=14] {};
+			\draw (1) -- (8);
+			\draw (1) -- (7);
+			\draw (7) -- (12);
+			\draw (1) -- (15);
+			\draw (1) -- (2);
+			\draw (1) -- (3);
+			\draw (4) -- (7);
+			\draw (12) -- (13);
+			\draw (11) -- (13);
+			\draw (4) -- (6);
+			\draw (13) -- (16);
+			\draw (5) -- (9);
+			\draw (10) -- (9);
+			\draw (10) -- (8);
+			\draw (10) -- (14);
+			\draw (2) -- (4);
+			\draw (3) -- (5);
+			\draw (5) -- (8);
+			\draw (14) -- (16);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\caption{Primjer grafa i jednog njegovog razapinjućeg podgrafa.}
+\end{figure}
+
+Na primjeru sa slike 3.1 vidi se da priloženi razapinjući podgraf nije jedini mogući razapinjući podgraf zadanog grafa.
+
+\begin{definition}
+	\textbf{Razapinjuće stablo} zadanog grafa $G = (V, E)$ s $n$ vrhova je podgraf $G' = (V, E')$ grafa $G$ koji je ujedno i stablo.
+\end{definition}
+
+Primjer razapinjućeg stabla za graf sa slike 3.1 je na slici 3.2.
+
+\newpage
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {}; 
+		\node[main] (2) [above left of=1] {};
+		\node[main] (3) [below left of=1] {};
+		\node[main] (4) [above right of=2] {};
+		\node[main] (5) [below right of=3] {};
+		\node[main] (6) [above right of=4] {};
+		\node[main] (7) [above right of=1] {};
+		\node[main] (8) [below right of=1] {};
+		\node[main] (9) [below right of=5] {};
+		\node[main] (10) [above right of=9] {};
+		\node[main] (11) [below right of=6] {};
+		\node[main] (12) [above right of=8] {};
+		\node[main] (13) [above right of=12] {};
+		\node[main] (14) [below right of=12] {};
+		\node[main] (15) [below left of=2] {};
+		\node[main] (16) [above right of=14] {};
+		\draw (1) -- (8);
+		\draw (1) -- (7);
+		\draw (7) -- (12);
+		\draw (1) -- (15);
+		\draw (1) -- (2);
+		\draw (1) -- (3);
+		\draw (4) -- (7);
+		\draw (12) -- (13);
+		\draw (11) -- (13);
+		\draw (4) -- (6);
+		\draw (13) -- (16);
+		\draw (5) -- (9);
+		\draw (10) -- (9);
+		\draw (10) -- (8);
+		\draw (10) -- (14);
+	\end{tikzpicture}
+	\caption{Jedno razapinjuće stablo grafa sa slike 3.1.}
+\end{figure}
+
+Naravno, stablo sa slike 3.2 nije jedino razapinjuće stablo grafa sa slike 3.1, te, počnemo li razmatrati težine bridova, otkrit ćemo da određivanje razapinjućeg stabla s minimalnom težinom ima brojne primjene.
+
+\section{Primjer primjene}
+
+Pretpostavimo da djelatnici Hrvatskih Autocesta žele sagraditi autoceste koje će povezivati gradove Zagreb $(Z)$, Sisak $(S)$, Kutinu, $(K)$, Glinu $(G)$ te Novsku $(N)$. Graf koji prikazuje odnose između ovih gradova prikazan je na slici 3.3. Cilj je povezati sve gradove s autocestom, no s obzirom da je izgradnja skupa, žele se povezati svi gradovi tako da ukupna kilometraža novih cesta bude najmanja moguća. Rješenje ovog problema je u pronalasku minimalnog razapinjućeg stabla. Za to postoje razni algoritmi, ovaj problem ću rješiti Primovim algoritmom, koji se svodi na to da odaberemo proizvoljni vrh grafa, pa se od skupa ostalih vrhova bira onaj koji je s odabranim vrhom susjedan, te čiji incidentni brid ima najmanju težinu. Svakim korakom algoritma tako povećavamo skup odabranih vrhova, i algoritam se ponavlja dok kardinalni broj odabranih vrhova ne bude jednak broju vrhova grafa. Rezultat će biti najmanje razapinjuće stablo.
+
+\newpage
 
 \begin{figure}[htb]
 	\centering
@@ -238,15 +463,249 @@ Sada smo se upoznali sa pojmom stabla. U nastavku će biti više govora o \textb
 		\draw (3) -- node[midway, above] {\textit{100}} (4);
 		\draw (1) -- node[midway, above right, sloped] {\textit{58.9}} (5);
 		\draw (2) -- node[midway, above right, sloped] {\textit{82.8}} (5);
+		\draw (3) -- node[midway, above right, sloped, pos=0.25] {\textit{71.7}} (5);
+		\draw (5) -- node[midway, above right, sloped, pos=0.25] {\textit{108}} (4);
 	\end{tikzpicture}
-	\caption{Primjer podgrafa grafa sa slike 2.1.}
+	\caption{Graf koji prikazuje odnose između gradova. Težina brida predstavlja udaljenost između dva pripadajuća grada izraženu u kilometrima.}
 \end{figure}
 
-Kao što vidimo, tema razapinjućih stabala je interesantna u mnogim područjima. U nastavku rada neću tražiti određeno razapinjuće stablo za zadani graf, već ću se baviti općenitijim problemom, pitanjem koliko razapinjućih stabala neki graf $G$ uopće ima. 
+Rezultat, to jest, minimalno razapinjuće stablo grafa sa slike 3.3, prikazano je na slici 3.4.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={30mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {$S$}; 
+		\node[main] (2) [right of=1] {$K$};
+		\node[main] (3) [below of=1] {$G$};
+		\node[main] (4) [below of=2] {$N$};
+		\node[main] (5) [above right of=1] {$Z$};
+		\draw (1) -- node[midway, above] {\textit{44.3}} (2);
+		\draw (1) -- node[midway, above left] {\textit{35.3}} (3);
+		\draw (2) -- node[midway, above right] {\textit{28.1}} (4);
+		\draw (1) -- node[midway, above right, sloped] {\textit{58.9}} (5);
+	\end{tikzpicture}
+	\caption{Minimalno razapinjuće stablo grafa sa slike 3.3}
+\end{figure}
+
+\newpage
+
+Nije pronalazak najmanjeg razapinjućeg stabla interesantan samo djelatnicima Hrvatskih Autocesta. Velikog interesa u tome vide i željezničari, koji također žele potršiti što je manje resusra pri gradnji. Također, ako se u neki grad želi uvesti kabelska televizija, isto će djelatnici upravo traženjem minimalnog razapinjućeg stabla tražiti najbolji način za povezati svaki dio grafa sa kablovima. Pri dizajnu električnih krugova, potrebno je povezati određene točke	da bi bile električki ekvivalentne. Minimalno razapinjućem stablo je potrebno najmanje žice da bi se povezao, što će električari htjeti. Ovo su samo neke od mogućih primjena.
+
+U nastavku rada neću tražiti određeno razapinjuće stablo za zadani graf, već ću se baviti općenitijim problemom, pitanjem koliko razapinjućih stabala neki graf $G$ uopće ima. To pitanje nije jednostavno, i ne postoji eksplicitna formula koja bi bila ispravna za svaki graf.
 
 \section{Broj razapinjućih stabala - primjeri}
 
 U ovom odjeljku bavit ću se određivanjem eksplicitnih formula za računanje broja razapinjućih stabala određenih vrsta grafova. Karakteristika tih formula će biti ta da će jedina varijabla u njima biti \textit{n}, odnosno broj vrhova grafa.
+
+Za grafove s malim brojem vrhova mogu se i ručno konstruirati sva razapinjuća stabla, no već i za grafove s 5 vrhova i nemalim brojem bridova (jednostavni graf s $n$ vrhova može imati maksimalno $\binom{n}{2}$ bridova) taj problem postaje kompliciran za rješavanje takvim postupkom.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={30mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {}; 
+		\node[main] (2) [above right of=1] {};
+		\node[main] (3) [above left of=1] {};
+		\node[main] (4) [below left of=1] {};
+		\node[main] (5) [below right of=1] {};
+		\draw (1) -- (2);
+		\draw (1) -- (4);
+		\draw (2) -- (3);
+		\draw (2) -- (5);
+		\draw (3) -- (4);
+		\draw (4) -- (5);
+	\end{tikzpicture}
+	\caption{Primjer grafa}
+\end{figure}
+
+Na slici 3.5 prikazan je jednostavan graf s 5 vrhova, a na slici 3.6 prikazano je njegovih 12 razapinjućih stabala.
+
+\begin{figure}[htb]
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (2);
+			\draw (2) -- (5);
+			\draw (3) -- (4);
+			\draw (4) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (2);
+			\draw (2) -- (3);
+			\draw (3) -- (4);
+			\draw (4) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (2);
+			\draw (2) -- (3);
+			\draw (2) -- (5);
+			\draw (3) -- (4);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (2);
+			\draw (2) -- (3);
+			\draw (2) -- (5);
+			\draw (4) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (4);
+			\draw (2) -- (3);
+			\draw (2) -- (5);
+			\draw (4) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (4);
+			\draw (2) -- (3);
+			\draw (3) -- (4);
+			\draw (4) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (4);
+			\draw (2) -- (5);
+			\draw (3) -- (4);
+			\draw (4) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (4);
+			\draw (2) -- (3);
+			\draw (2) -- (5);
+			\draw (3) -- (4);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (2);
+			\draw (1) -- (4);
+			\draw (2) -- (5);
+			\draw (3) -- (4);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (2);
+			\draw (1) -- (4);
+			\draw (2) -- (3);
+			\draw (4) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (2);
+			\draw (1) -- (4);
+			\draw (3) -- (4);
+			\draw (4) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {}; 
+			\node[main] (2) [above right of=1] {};
+			\node[main] (3) [above left of=1] {};
+			\node[main] (4) [below left of=1] {};
+			\node[main] (5) [below right of=1] {};
+			\draw (1) -- (2);
+			\draw (1) -- (4);
+			\draw (2) -- (3);
+			\draw (2) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\endminipage\hfill
+	\caption{Razapinjuća stabla grafa sa slike 3.5}
+\end{figure}
+
+\newpage
+
+Kao što vidimo, već za graf sa slike 3.5, koji ima 5 vrhova i samo 7 bridova (grafovi s 5 vrhova mogu imati maksimalno 10 bridova) imamo 12 razapinjućih stabala. Očigledno je da će se povećanjem broja bridova i broja vrhova ovaj zadatak čovjeku znatno otežati, i tu se rađa potreba za pametnijim načinom računanja.
 
 \subsection{Kotač, \textit{W\textsubscript{n}}}
 
@@ -774,7 +1233,41 @@ L^{(22)} =
 
 Determinanta prethodne matrice, a ujedno i broj razapinjućih stabala grafa sa slike 5.1 je: $T(G) = det L^{(22)} = 40$. Jednak bi se rezultat dobio da smo matricu \textit{L\textsuperscript{(ii)}} stvorili tako da smo maknuli bilo koji drugi redak i stupac matrice \textit{L}.
 
-\section{Računanje broja razapinjućih stabala potpunog grafa s \textit{n} vrhova, \textit{K\textsubscript{n}}}
+\section{Računanje broja razapinjućih stabala za poznate familije grafova}
+
+U ovom odjeljku ću na temelju matričnog teorema o stablima izračunati eksplicitne formule za broj razapinjućih stabala potpunih grafova, $K_n$.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={30mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {}; 
+		\node[main] (2) [right of=1] {};
+		\node[main] (3) [above right of=2] {};
+		\node[main] (4) [above left of=3] {};
+		\node[main] (5) [left of=4] {};
+		\node[main] (6) [above left of=1] {};
+		\draw (1) -- (2);
+		\draw (1) -- (3);
+		\draw (1) -- (4);
+		\draw (1) -- (5);
+		\draw (1) -- (6);
+		\draw (2) -- (3);
+		\draw (2) -- (4);
+		\draw (2) -- (5);
+		\draw (2) -- (6);
+		\draw (3) -- (4);
+		\draw (3) -- (5);
+		\draw (3) -- (6);
+		\draw (4) -- (5);
+		\draw (4) -- (6);
+		\draw (5) -- (6);
+	\end{tikzpicture}
+	\caption{Primjer potpunog grafa, $K_6$}
+\end{figure}
+
+\subsection{Potpuni graf, K\textsubscript{n}}
+
+Potpuni graf je graf u kojem je svaki vrh susjedan sa svim ostalim vrhovima. Primjer jednog potpunog grafa je dan na slici 5.2.
 
 U \textbf{\textit{dodaj poveznicu na skriptu iz diskretne}} iznesen je rezultat da potpuni graf s $n$ vrhova, $K_n$, ima $n^{n-2}$ razapinjućih stabala. Sada ću taj rezultat prikazati preko matričnog teorema o stablima.
 
@@ -817,7 +1310,7 @@ L^{(ii)} =
 \end{bmatrix}
 \]
 
-Sada je potrebno izračunati determinantu prethodne matrice. Počinjemo tako da prvom retku zbrojimo sve ostale retke matrice. Dobit ćemo:
+Dimenzija prethodne matrice je $(n-1)*(n-1)$. Sada je potrebno izračunati determinantu prethodne matrice. Počinjemo tako da prvom retku zbrojimo sve ostale retke matrice. Dobit ćemo:
 
 \[
 \centering
@@ -846,6 +1339,13 @@ Primjetimo da smo dobili gornju trokutastu matricu, a njena determinanta je jedn
 \chapter{Graphelite - računanje broja razapinjućih stabala}
 
 \textit{\textbf{Graphelite}} je web-aplikacija razvijena u 5. semestru u sklopu kolegija \textit{Projekt R} u suradnji s još dvoje kolega. To je aplikacija koja korisniku dopušta da crta jednostavne grafove i nad njima provodi razne algoritme i dobije zanimljive rezultate o nacrtanim grafovima. Moguće je crtati grafove, nacrtanom grafu odrediti najmanje razapinjuće stablo, odrediti duljinu struka (najkraći ciklus), odrediti kromatski broj, obojati vrhove grafa, te izračunati broj razapinjućih stabala.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{slike/graphelite.png}
+	\caption{Korisničko sučelje web-aplikacije \textit{Graphelite}}
+	\label{fig:graphelite}
+\end{figure}
 
 \section{Računanje broja razapinjućih stabala grafa}
 
@@ -926,23 +1426,34 @@ Na slici 6.3 se vidi graf kotač s 6 vrhova, \textit{W\textsubscript{5}} nacrtan
 \end{figure}
 
 Na slici 6.4 vidi se matrica susjedstva za \textit{W\textsubscript{5}} te broj razapinjućih stabala istog. Vidimo da je taj broj 121.
+
 \chapter{Zaključak}
-Zaključak.
+
+
+Upoznali smo se sa pojmom grafa, iznijeli neke glavne definicije i rezultate o grafovima. Nakon toga smo se upoznali s stablima, te pojmom razapinjućih stabala koji je bio i centralni pojam ovog rada.
+
+U glavnom dijelu rada smo se bavili određivanjem broja razapinjućih stabala proizvoljnog grafa i ubrzo shvatili da to pitanje nema jednostavan odgovor. Dali smo primjer grafa kotača na kojem smo izračunali eksplicitnu formulu za određivanje broja razapinjućih stabala. Za poneke familije grafova je i moguće odrediti eksplicitnu formulu koja ovisi samo o broju vrhova, no u slučaju proizvoljnog grafa, to je dosta teži problem.
+
+Kao rješenje predstavljen je \textit{matrični teorem o stablima}, koji nam daje elegantno rješenje. Teorem nam kaže da je za računanje broja razapinjućih stabala proizvoljnog grafa dovoljna samo njegova matrica susjedstva, koju je potrebno izmjeniti po određenom pravilu, i determinanta te matrice će biti jednaka broju razapinjućih stabala grafa.
+
+To je elegantan rezultat koji možda čovjeku ipak ne daje efikasan način ručnog računanjabroja razapinjućih stabala (jer već i računanje determinante matrice koja ima dimenzije $8*8$ može biti mukotrpan posao), ali daje ideju po kojoj se mogu složiti efektivni algoritmi u kojima će brzina rješavanja problema biti jednaka brzini računanja determinante. 
+
+Predstavljena je i web-aplikacija \textit{Graphelite} razvijena u sklopu kolegija \textit{Projekt R} koja korisniku daje mogućnost da crta grafove i nad njima provodi razne zanimljive algoritme. Među njima je i algoritam za računanje broja razapinjućih stabala, i njegov pseudokod je napisan u ovom radu.
 
 \bibliography{literatura}
 \bibliographystyle{fer}
 
 \begin{sazetak}
-Sažetak na hrvatskom jeziku.
+Tema ovog rada je prebrojavanje broja razapinjućih stabala grafa. Predstavljeni su osnovni pojmovi teorije grafova, zatim je predstavljen pojam razapinjućeg grafa te prikazani primjeri primjene, zatim je predstavljeno teorijsko računanje broja razapinjućih grafova. Slijedi iskaz i dokaz matričnog teorema o stablima, te primjeri njegove primjene. Na kraju je prikazan rad web-aplikacije \textit{Graphelite} koja je razvijena u sklopu kolegija \textit{Projekt R}.
 
-\kljucnerijeci{grafovi, stabla, razapinjuća stabla, matrix-tree teorem}
+\kljucnerijeci{teorija grafova, stabla, razapinjuća stabla, matrix-tree teorem}
 \end{sazetak}
 
-\engtitle{Counting the spanning trees}
+\engtitle{Counting spanning trees of a graph}
 \begin{abstract}
-Abstract.
+The thesis for this paper is counting spanning trees. First I presented the basic concepts of graph theory, then I introduced the spanning trees and connected them with some applications. After that, I expressed and proved the Matrix-tree theorem and used it to solve some examples. In the end, I showed the implementation of the \textit{Graphelite} web-application that was developed in \textit{(CS Project)} class.
 
-\keywords{graphs, trees, spanning trees, matrix-tree theorem}
+\keywords{graph theory, trees, spanning trees, matrix-tree theorem}
 \end{abstract}
 
 \end{document}
