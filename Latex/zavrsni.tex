@@ -67,7 +67,7 @@ U četvrtom dijelu ću, koristeći prethodno dokazani teorem, iznijeti rezultate
 Obzirom da će se u ovom radu obrađivati određeni problemi teorije grafova, vrijeme je da se upoznamo sa pojmom grafa.
 
 \begin{definition}
-	\textbf{Jednostavni graf} G sastoji se od nepraznog konačnog skupa $V(G)$, čije elemente zovemo \textbf{vrhovi} grafa G i konačnog skupa $E(G)$ različitih dvočlanih podskupova skupa $V(G)$ koje zovemo \textbf{bridovi}.
+	\textbf{Jednostavni graf} G sastoji se od nepraznog konačnog skupa $V(G)$, čije elemente zovemo \textbf{vrhovi} grafa G i konačnog skupa $E(G)$ različitih dvočlanih podskupova skupa $V(G)$ koje zovemo \textbf{bridovi}.\footnote{Definicija iz \cite{KKNP}}
 \end{definition}
 
 \begin{figure}[htb]
@@ -132,7 +132,7 @@ Na slici 2.2 vidimo graf koji se može promatrati kao unija dva grafa. Vidimo da
 Graf sa slike 2.1 je primjer povezanog grafa.
 
 \begin{definition}
-	\textbf{Stupanj vrha} \textit{v} grafa \textit{G} je broj vrhova koji su incidentni s \textit{v}. Označavamo ga s \textit{deg(v)}.
+	\textbf{Stupanj vrha} \textit{v} grafa \textit{G} je broj vrhova koji su incidentni s \textit{v}. Označavamo ga s \textit{deg(v)}.\footnote{Definicija iz \cite{KKNP}}
 \end{definition}
 
 Za graf sa slike 2.1, $deg(1) = deg(2) = 4$ i $deg(3) = deg(4) = deg(5) = deg(6) = 2$.
@@ -140,7 +140,7 @@ Za graf sa slike 2.1, $deg(1) = deg(2) = 4$ i $deg(3) = deg(4) = deg(5) = deg(6)
 Također, u nastavku će nam biti važan pojam podgrafa grafa.
 
 \begin{definition}
-	\textbf{Podgraf} grafa \textit{G} je graf čiji vrhovi pripadaju skupu $V(G)$ , a bridovi skupu $E(G)$.
+	\textbf{Podgraf} grafa \textit{G} je graf čiji vrhovi pripadaju skupu $V(G)$ , a bridovi skupu $E(G)$.\footnote{Definicija iz \cite{KKNP}}
 \end{definition}
 
 Za graf sa slike 2.1, jedan od podgrafova je i graf na slici 2.3.
@@ -165,7 +165,7 @@ Za graf sa slike 2.1, jedan od podgrafova je i graf na slici 2.3.
 Nakon što su izneseni neki važni rezultati o samim grafovima, treba se osvrnuti i na njihovo predstavljanje.
 
 \begin{definition}
-	Označimo li vrhove zadanog grafa G s $V = {1, 2, 3,..., n}$, onda definiramo \textbf{matricu susjedstva} $A = [a_{ij}]$ kao n x n matricu čiji je element $a_{ij}$ jednak broju bridova koji spaja vrh i s vrhom j.
+	Označimo li vrhove zadanog grafa G s $V = {1, 2, 3,..., n}$, onda definiramo \textbf{matricu susjedstva} $A = [a_{ij}]$ kao n x n matricu čiji je element $a_{ij}$ jednak broju bridova koji spaja vrh i s vrhom j.\footnote{Definicija iz \cite{KKNP}}
 \end{definition}
 
 Za graf sa slike 2.1, pripadna matrica susjedstva je sljedeća:
@@ -186,7 +186,7 @@ A =
 Zanimljivo je primjetiti da zbroj svih elemenata u pojedinom retku ili stupcu, točno korespondira stupnju pripadajućeg vrha.
 
 \begin{definition}
-	Označe li se dodatno i bridovi zadanog grafa G s $E = {1, 2, 3, ..., m}$, onda definiramo \textbf{matricu incidencije} kao n x m matricu $B = [b_{ij}]$ čiji su elementi jednaki 1 ako je vrh 1 incidentan s vrhom j, a 0 inače.
+	Označe li se dodatno i bridovi zadanog grafa G s $E = {1, 2, 3, ..., m}$, onda definiramo \textbf{matricu incidencije} kao n x m matricu $B = [b_{ij}]$ čiji su elementi jednaki 1 ako je vrh 1 incidentan s vrhom j, a 0 inače.\footnote{Definicija iz \cite{KKNP}}
 \end{definition}
 
 Za graf sa slike 2.1, pripadajuća matrica incidencije je sljedeća:
@@ -207,7 +207,7 @@ B =
 Sada, kada smo se upoznali s glavnim rezultatima vezanim za grafove, vrijeme je da fokus prijeđe na \textbf{stabla}.
 
 \begin{definition}
-	\textbf{Šuma} je graf bez ciklusa, a povezanu šumu zovemo \textbf{stablo}.
+	\textbf{Šuma} je graf bez ciklusa, a povezanu šumu zovemo \textbf{stablo}.\footnote{Definicija iz \cite{KKNP}}
 \end{definition}
 
 Na slici 2.4 možemo vidjeti nekoliko stabala.
@@ -288,7 +288,7 @@ Sada smo se upoznali sa pojmom stabla. U nastavku će biti više govora o \textb
 \chapter{Razapinjuća stabla}
 
 \begin{definition}
-	\textbf{Razapinjući podgraf} zadanog grafa $G = (V, E)$ s $n$ vrhova je svaki podgraf $G' = (V, E')$ grafa $G$ s istim skupom vrhova kao i $G$, dakle također s $n$ vrhova.
+	\textbf{Razapinjući podgraf} zadanog grafa $G = (V, E)$ s $n$ vrhova je svaki podgraf $G' = (V, E')$ grafa $G$ s istim skupom vrhova kao i $G$, dakle također s $n$ vrhova.\footnote{Definicija iz \cite{KKNP}}
 \end{definition}
 
 \begin{figure}[htb]
@@ -758,7 +758,7 @@ Vrijedi: $T(G) = x + y$. Uočimo sada da je:
 	\item $x = T(G - e)$ jer je svako razapinjuće stablo od \textit{G} koje ne sadrži \textit{e}, ujedno i razapinjuće stablo od $G - e$
 	\item $y = T(G \backslash e)$ jer svako razapinjuće stablo od $G \backslash e$ možemo dobiti iz razapinjućeg stabla od \textit{G} koje sadrži brid \textit{e} postupkom konkatenacije brida \textit{e} u tom stablu.
 \end{itemize}
-Dakle, vrijedi $T(G) = T(G - e) + T(G \backslash e)$.
+Dakle, vrijedi $T(G) = T(G - e) + T(G \backslash e)$.\footnote{Dokaz po uzoru na \cite{YWC}}
 \end{proof}
 
 Da bismo mogli pronaći eksplicitnu formulu za računanje broja razapinjućih stabala kotača s proizvoljnim brojem vrhova, potrebno je definirati nekoliko familija grafova koje ćemo koristiti.
@@ -1168,7 +1168,7 @@ Ovaj rezultat slijedi iz činjenice da determinanta matrice može biti napisana 
 	detA = \sum_{j = 1}^{n} (-1)^j A_{1,j} detA^{(1,j)}.
 \end{equation}
 
-Dakle, ako se dvije matrice razlikuju samo u njihovim (1,1) ćelijama, a $A_{ij} = B_{ij}$ za svaki drugi \textit{i} i \textit{j}, njihove determinante se razlikuju za determinantu njigovih (1,1) minora, odnosno $detA = detB + detA^{(1,1)}.$ Primjenimo li ovo za $L_G^{(ii)}$ i $L_{G - e}^{(ii)}$, dobit ćemo izraz (4.2), čime se dovršava dokaz ovog teorema.
+Dakle, ako se dvije matrice razlikuju samo u njihovim (1,1) ćelijama, a $A_{ij} = B_{ij}$ za svaki drugi \textit{i} i \textit{j}, njihove determinante se razlikuju za determinantu njigovih (1,1) minora, odnosno $detA = detB + detA^{(1,1)}.$ Primjenimo li ovo za $L_G^{(ii)}$ i $L_{G - e}^{(ii)}$, dobit ćemo izraz (4.2), čime se dovršava dokaz ovog teorema.\footnote{Dokaz po uzoru na \cite{MM}}
 \end{proof}
 
 \chapter{Računanje broja razapinjućih stabala pomoću matričnog teorema o stablima}
@@ -1269,7 +1269,7 @@ U ovom odjeljku ću na temelju matričnog teorema o stablima izračunati eksplic
 
 Potpuni graf je graf u kojem je svaki vrh susjedan sa svim ostalim vrhovima. Primjer jednog potpunog grafa je dan na slici 5.2.
 
-U \textbf{\textit{dodaj poveznicu na skriptu iz diskretne}} iznesen je rezultat da potpuni graf s $n$ vrhova, $K_n$, ima $n^{n-2}$ razapinjućih stabala. Sada ću taj rezultat prikazati preko matričnog teorema o stablima.
+U \cite{KKNP} iznesen je rezultat da potpuni graf s $n$ vrhova, $K_n$, ima $n^{n-2}$ razapinjućih stabala. Sada ću taj rezultat prikazati preko matričnog teorema o stablima.
 
 Za potpuni graf $K_n$ s $n$ vrhova, pripadajuća matrica susjedstva je sljedeća:
 
@@ -1440,8 +1440,18 @@ To je elegantan rezultat koji možda čovjeku ipak ne daje efikasan način ručn
 
 Predstavljena je i web-aplikacija \textit{Graphelite} razvijena u sklopu kolegija \textit{Projekt R} koja korisniku daje mogućnost da crta grafove i nad njima provodi razne zanimljive algoritme. Među njima je i algoritam za računanje broja razapinjućih stabala, i njegov pseudokod je napisan u ovom radu.
 
-\bibliography{literatura}
 \bibliographystyle{fer}
+
+\begin{thebibliography}{6}
+	\bibitem{MM}
+	C. Moore, S. Mertens, The Nature of Computation, Oxford University Press Inc., New York, 2011., 663--667
+	\bibitem{MB}
+	M. Bóna, A Walk Through Combinatorics: An Introduction to Enumeration and Graph Theory, 4. izdanje, World Scientific, New Yersey, 2017.
+	\bibitem{KKNP}
+	D. Kovačević, M. Krnić, A. Nakić, M.O. Pavčević, Diskretna matematika 1, FER, Zagreb, rujan 2019.
+	\bibitem{YWC}
+	B. Ye Wu, K. Chao, Spanning Trees and Optimization Problems, Chapman \& Hall/CRC, 2004.
+\end{thebibliography}
 
 \begin{sazetak}
 Tema ovog rada je prebrojavanje broja razapinjućih stabala grafa. Predstavljeni su osnovni pojmovi teorije grafova, zatim je predstavljen pojam razapinjućeg grafa te prikazani primjeri primjene, zatim je predstavljeno teorijsko računanje broja razapinjućih grafova. Slijedi iskaz i dokaz matričnog teorema o stablima, te primjeri njegove primjene. Na kraju je prikazan rad web-aplikacije \textit{Graphelite} koja je razvijena u sklopu kolegija \textit{Projekt R}.

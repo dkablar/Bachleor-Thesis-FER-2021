@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  30 MAY 2021 02:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  30 MAY 2021 21:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -597,7 +597,23 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count313
 \l__pdf_internal_box=\box65
 )
-(./zavrsni.aux)
+(./zavrsni.aux
+
+! Package natbib Error: Bibliography not compatible with author-year citations.
+
+(natbib)                Press <return> to continue in numerical citation style.
+
+
+See the natbib package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 ...mand\NAT@force@numbers{}\NAT@force@numbers
+                                                  
+Check the bibliography entries for non-compliant syntax,
+or select author-year BibTeX style, e.g. plainnat
+
+)
 \openout1 = `zavrsni.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -755,20 +771,16 @@ Package pdftex.def Info: slike/kotacbroj.png  used on input line 1423.
  [24 <./slike/petersonov.PNG>] [25 <./slike/petersonovbroj.PNG> <./slike/kotac2
 .PNG>] [26 <./slike/kotacbroj.PNG>]
 Poglavlje 7.
-(./zavrsni.bbl [27
+[27
 
-]
-
-Package natbib Warning: Empty `thebibliography' environment on input line 8.
-
-) [28
+] [28
 
 ] [29] (./zavrsni.aux) ) 
 Here is how much of TeX's memory you used:
- 18470 strings out of 479917
- 339610 string characters out of 5886666
- 649035 words of memory out of 5000000
- 34688 multiletter control sequences out of 15000+600000
+ 18477 strings out of 479917
+ 339697 string characters out of 5886666
+ 648112 words of memory out of 5000000
+ 34698 multiletter control sequences out of 15000+600000
  616725 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,14n,88p,979b,855s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -785,7 +797,7 @@ fb><a:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><a:/texlive/
 /fonts/type1/urw/times/utmb8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/t
 imes/utmbi8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (32 pages, 333177 bytes).
+Output written on zavrsni.pdf (32 pages, 335377 bytes).
 PDF statistics:
  179 PDF objects out of 1000 (max. 8388607)
  119 compressed objects within 2 object streams
