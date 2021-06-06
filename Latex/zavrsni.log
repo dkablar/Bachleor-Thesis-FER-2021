@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  30 MAY 2021 21:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  6 JUN 2021 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -586,7 +586,9 @@ Package: amsthm 2020/05/29 v2.20.6
 )
 \c@theorem=\count311
 \c@definition=\count312
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 11
+\c@lemma=\count313
+\c@proposition=\count314
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 13
 .
 
 (a:/texlive/2020/texmf-dist/tex/latex/psnfss/t1ptm.fd
@@ -594,7 +596,7 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (a:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count313
+\l__kernel_color_stack_int=\count315
 \l__pdf_internal_box=\box65
 )
 (./zavrsni.aux
@@ -616,20 +618,20 @@ or select author-year BibTeX style, e.g. plainnat
 )
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -667,16 +669,16 @@ LaTeX Font Info:    ... okay on input line 11.
 
 (a:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count314
+\scratchcounter=\count316
 \scratchdimen=\dimen291
 \scratchbox=\box66
-\nofMPsegments=\count315
-\nofMParguments=\count316
+\nofMPsegments=\count317
+\nofMParguments=\count318
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count317
+\MPscratchCnt=\count319
 \MPscratchDim=\dimen292
-\MPnumerator=\count318
-\makeMPintoPDFobject=\count319
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
 \everyMPtoPDFconversion=\toks49
 ) (a:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -691,20 +693,20 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count320
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 19
+\c@lstlisting=\count322
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 21
 .
 
 (a:/texlive/2020/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
 
 
 (a:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
 
 
 (a:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -726,81 +728,82 @@ Poglavlje 1.
 Poglavlje 2.
 [3
 
-] [4] [5] [6]
+] [4] [5] [6] [7]
 Poglavlje 3.
-[7
+[8
 
-] [8] [9] [10] [11] [12] [13] [14] [15]
+] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
 Poglavlje 4.
-[16
-
-] [17] [18]
-Poglavlje 5.
 [19
 
-] [20] [21]
+] [20] [21] [22] [23]
+Poglavlje 5.
+[24
+
+] [25] [26]
 Poglavlje 6.
-<slike/graphelite.png, id=95, 545.6385pt x 528.17325pt>
+<slike/graphelite.png, id=112, 545.6385pt x 528.17325pt>
 File: slike/graphelite.png Graphic file (type png)
 <use slike/graphelite.png>
-Package pdftex.def Info: slike/graphelite.png  used on input line 1345.
+Package pdftex.def Info: slike/graphelite.png  used on input line 1487.
 (pdftex.def)             Requested size: 206.28249pt x 199.67633pt.
-[22
-
- <./slike/graphelite.PNG>] [23]
-<slike/petersonov.png, id=105, 292.09125pt x 302.3295pt>
-File: slike/petersonov.png Graphic file (type png)
-<use slike/petersonov.png>
-Package pdftex.def Info: slike/petersonov.png  used on input line 1396.
-(pdftex.def)             Requested size: 206.28249pt x 213.5206pt.
-<slike/petersonovbroj.png, id=106, 211.38976pt x 316.18124pt>
-File: slike/petersonovbroj.png Graphic file (type png)
-<use slike/petersonovbroj.png>
-Package pdftex.def Info: slike/petersonovbroj.png  used on input line 1403.
-(pdftex.def)             Requested size: 206.28249pt x 308.56253pt.
-<slike/kotac2.png, id=107, 322.20375pt x 313.77225pt>
-File: slike/kotac2.png Graphic file (type png)
-<use slike/kotac2.png>
-Package pdftex.def Info: slike/kotac2.png  used on input line 1416.
-(pdftex.def)             Requested size: 206.28249pt x 200.89015pt.
-<slike/kotacbroj.png, id=108, 264.99pt x 284.86424pt>
-File: slike/kotacbroj.png Graphic file (type png)
-<use slike/kotacbroj.png>
-Package pdftex.def Info: slike/kotacbroj.png  used on input line 1423.
-(pdftex.def)             Requested size: 206.28249pt x 221.7542pt.
- [24 <./slike/petersonov.PNG>] [25 <./slike/petersonovbroj.PNG> <./slike/kotac2
-.PNG>] [26 <./slike/kotacbroj.PNG>]
-Poglavlje 7.
 [27
 
-] [28
+ <./slike/graphelite.PNG>] [28]
+<slike/petersonov.png, id=122, 292.09125pt x 302.3295pt>
+File: slike/petersonov.png Graphic file (type png)
+<use slike/petersonov.png>
+Package pdftex.def Info: slike/petersonov.png  used on input line 1538.
+(pdftex.def)             Requested size: 206.28249pt x 213.5206pt.
+<slike/petersonovbroj.png, id=123, 211.38976pt x 316.18124pt>
+File: slike/petersonovbroj.png Graphic file (type png)
+<use slike/petersonovbroj.png>
+Package pdftex.def Info: slike/petersonovbroj.png  used on input line 1545.
+(pdftex.def)             Requested size: 206.28249pt x 308.56253pt.
+<slike/kotac2.png, id=124, 322.20375pt x 313.77225pt>
+File: slike/kotac2.png Graphic file (type png)
+<use slike/kotac2.png>
+Package pdftex.def Info: slike/kotac2.png  used on input line 1558.
+(pdftex.def)             Requested size: 206.28249pt x 200.89015pt.
+<slike/kotacbroj.png, id=125, 264.99pt x 284.86424pt>
+File: slike/kotacbroj.png Graphic file (type png)
+<use slike/kotacbroj.png>
+Package pdftex.def Info: slike/kotacbroj.png  used on input line 1565.
+(pdftex.def)             Requested size: 206.28249pt x 221.7542pt.
+ [29 <./slike/petersonov.PNG>] [30 <./slike/petersonovbroj.PNG> <./slike/kotac2
+.PNG>] [31 <./slike/kotacbroj.PNG>]
+Poglavlje 7.
+[32
 
-] [29] (./zavrsni.aux) ) 
+] [33
+
+] [34] (./zavrsni.aux) ) 
 Here is how much of TeX's memory you used:
- 18477 strings out of 479917
- 339697 string characters out of 5886666
- 648112 words of memory out of 5000000
- 34698 multiletter control sequences out of 15000+600000
- 616725 words of font info for 117 fonts, out of 8000000 for 9000
+ 18494 strings out of 479917
+ 339884 string characters out of 5886666
+ 645339 words of memory out of 5000000
+ 34716 multiletter control sequences out of 15000+600000
+ 613922 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,14n,88p,979b,855s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 77i,14n,88p,1004b,855s stack positions out of 5000i,500n,10000p,200000b,80000s
 {a:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc
 }<a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><a:/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><a:/texlive/2020/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><a:/texlive/2020/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi8.pfb><a:/texlive/2020/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr8.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
-fb><a:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><a:/texlive/
-2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><a:/texlive/2020/texmf-dist
-/fonts/type1/urw/times/utmb8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/t
-imes/utmbi8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
-a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (32 pages, 335377 bytes).
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb><a:/texlive/2020/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb><a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb><a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><a:/tex
+live/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><a:/texlive/2020/texmf
+-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><a:/texlive/2020/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmbi
+8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><a:/texlive
+/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zavrsni.pdf (37 pages, 351885 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
+ 201 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

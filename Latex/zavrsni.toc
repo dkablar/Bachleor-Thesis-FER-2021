@@ -1,20 +1,17 @@
 \babel@toc {croatian}{}
 \contentsline {chapter}{\numberline {1}Uvod}{1}{}%
-\contentsline {chapter}{\numberline {2}Glavne definicije i rezultati}{3}{}%
-\contentsline {chapter}{\numberline {3}Razapinjuća stabla}{7}{}%
-\contentsline {section}{\numberline {3.1}Primjer primjene}{8}{}%
-\contentsline {section}{\numberline {3.2}Broj razapinjućih stabala - primjeri}{10}{}%
-\contentsline {subsection}{\numberline {3.2.1}Kotač, \textit {W\textsubscript {n}}}{11}{}%
-\contentsline {chapter}{\numberline {4}Matrični teorem o stablima}{16}{}%
-\contentsline {section}{\numberline {4.1}Laplacian}{16}{}%
-\contentsline {section}{\numberline {4.2}Matrix-Tree teorem}{17}{}%
-\contentsline {chapter}{\numberline {5}Računanje broja razapinjućih stabala pomoću matričnog teorema o stablima}{19}{}%
-\contentsline {section}{\numberline {5.1}Računanje broja razapinjućih stabala za poznate familije grafova}{20}{}%
-\contentsline {subsection}{\numberline {5.1.1}Potpuni graf, K\textsubscript {n}}{20}{}%
-\contentsline {chapter}{\numberline {6}Graphelite - računanje broja razapinjućih stabala}{22}{}%
-\contentsline {section}{\numberline {6.1}Računanje broja razapinjućih stabala grafa}{22}{}%
-\contentsline {section}{\numberline {6.2}Demonstracija rada programa}{24}{}%
-\contentsline {subsection}{\numberline {6.2.1}Petersonov graf}{24}{}%
-\contentsline {subsection}{\numberline {6.2.2}Kotač sa 6 vrhova, \textit {W\textsubscript {5}}}{24}{}%
-\contentsline {chapter}{\numberline {7}Zaključak}{27}{}%
-\contentsline {chapter}{Literatura}{28}{}%
+\contentsline {chapter}{\numberline {2}Osnovne definicije i rezultati}{3}{}%
+\contentsline {chapter}{\numberline {3}Razapinjuća stabla}{8}{}%
+\contentsline {section}{\numberline {3.1}Minimalna razapinjuća stabla grafa}{9}{}%
+\contentsline {section}{\numberline {3.2}Primjeri prebrojavanja razapinjućih stabala grafa}{13}{}%
+\contentsline {subsection}{\numberline {3.2.1}Kotač \textit {W\textsubscript {n}}}{14}{}%
+\contentsline {chapter}{\numberline {4}Matrični teorem o stablima}{19}{}%
+\contentsline {section}{\numberline {4.1}Iskaz i dokaz teorema}{20}{}%
+\contentsline {chapter}{\numberline {5}Prebrajanje razapinjućih stabala grafa pomoću matričnog teorema o stablima}{24}{}%
+\contentsline {chapter}{\numberline {6}Graphelite - računanje broja razapinjućih stabala}{27}{}%
+\contentsline {section}{\numberline {6.1}Računanje broja razapinjućih stabala grafa}{27}{}%
+\contentsline {section}{\numberline {6.2}Demonstracija rada programa}{29}{}%
+\contentsline {subsection}{\numberline {6.2.1}Petersonov graf}{29}{}%
+\contentsline {subsection}{\numberline {6.2.2}Kotač sa 6 vrhova, \textit {W\textsubscript {5}}}{29}{}%
+\contentsline {chapter}{\numberline {7}Zaključak}{32}{}%
+\contentsline {chapter}{Literatura}{33}{}%
