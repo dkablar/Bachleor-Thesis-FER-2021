@@ -541,8 +541,6 @@ Ovaj problem iz teorije grafova može se dovesti u vezu i s drugim problemima iz
 
 U nastavku rada nećemo konstruirati razapinjuća stabla zadanog grafa, već ćemo se baviti pitanjem koliko razapinjućih stabala neki graf $G$ uopće ima. Odgovor na postavljeno pitanje nije jednostavan i ne postoji zatvorena formula za broj razapinjućih stabala zadanog grafa.
 
-\newpage
-
 \section{Primjeri prebrojavanja razapinjućih stabala grafa}
 
 U ovom odjeljku bavit ću se određivanjem eksplicitnih formula za računanje broja razapinjućih stabala određenih familija grafova.
@@ -787,7 +785,197 @@ Prvi primjer je graf kotač. Kotač $W_n$ je graf koji se dobije iz ciklusa $C_n
 	\caption{Kotač $W_6$.}
 \end{figure}
 
-Jedan primjer kotača je i $W_6$ prikazan na slici 3.1. Odredit ćemo ukupan broj razapinjućih stabala kotača $W_n$.
+Jedan primjer kotača je i $W_6$ prikazan na slici 3.7. Odredit ćemo ukupan broj razapinjućih stabala kotača $W_n$.
+
+Izračunajmo prvo na ruke brojeve razapinjućih stabala za kotače $W_3$, $W_4$ i $W_5$. Ti će nam brojevi biti važni pri izračunu broja razapinjućih stabala kotača.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={30mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {$1$}; 
+		\node[main] (2) [above of=1] {$2$};
+		\node[main] (3) [below left of=1] {$3$};
+		\node[main] (4) [below right of=1] {$4$};
+		\draw (1) -- (2);
+		\draw (1) -- (3);
+		\draw (1) -- (4);
+		\draw (2) -- (3);
+		\draw (2) -- (4);
+		\draw (3) -- (4);
+	\end{tikzpicture}
+	\caption{Kotač $W_3$.}
+\end{figure}
+
+Promotrimo li vrh $1$, primjetit ćemo da on može biti stupnja 1, 2 ili 3.
+
+\begin{figure}[htb]
+	\minipage{0.33\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={20mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {$1$}; 
+			\node[main] (2) [above of=1] {$2$};
+			\node[main] (3) [below left of=1] {$3$};
+			\node[main] (4) [below right of=1] {$4$};
+			\draw (1) -- (2);
+			\draw (1) -- (3);
+			\draw (1) -- (4);
+		\end{tikzpicture}
+	\end{center}
+	\caption*{$deg(1) = 3$}
+	\endminipage\hfill
+	\minipage{0.33\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={20mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {$1$}; 
+			\node[main] (2) [above of=1] {$2$};
+			\node[main] (3) [below left of=1] {$3$};
+			\node[main] (4) [below right of=1] {$4$};
+			\draw (1) -- (2);
+			\draw (1) -- (3);
+			\draw (2) -- (4);
+		\end{tikzpicture}
+	\end{center}
+	\caption*{$deg(1) = 2$}
+	\endminipage\hfill
+	\minipage{0.33\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={20mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {$1$}; 
+			\node[main] (2) [above of=1] {$2$};
+			\node[main] (3) [below left of=1] {$3$};
+			\node[main] (4) [below right of=1] {$4$};
+			\draw (1) -- (2);
+			\draw (2) -- (3);
+			\draw (3) -- (4);
+		\end{tikzpicture}
+	\end{center}
+	\caption*{$deg(1) = 1$}
+	\endminipage\hfill
+	\caption{Primjeri razapinjućih stabala grafa $W_3$ gdje vrh $1$ ima različite stupnjeve.}
+\end{figure}
+
+Do broja razapinjućih stabala grafa $W_3$ dolazimo tako da za svaki stupanj vrha $1$ prebrojimo stabla. Tim postupkom dolazimo do sljedećih rezultata: za $deg(1) = 3$ postoji 1 razapinjuće stablo, za $deg(1) = 2$ postoji 6 razapinjućih stabala, te za $deg(1) = 1$ postoji 9 razapinjućih stabala. To nas dovodi do ukupnog rezultata: $T(W_3) = 1 + 6 + 9 = 16$.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={30mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {$1$}; 
+		\node[main] (2) [below left of=1] {$2$};
+		\node[main] (3) [below right of=1] {$3$};
+		\node[main] (4) [above right of=1] {$4$};
+		\node[main] (5) [above left of=1] {$5$};
+		\draw (1) -- (2);
+		\draw (1) -- (3);
+		\draw (1) -- (4);
+		\draw (1) -- (5);
+		\draw (2) -- (3);
+		\draw (2) -- (5);
+		\draw (3) -- (4);
+		\draw (4) -- (5);
+	\end{tikzpicture}
+	\caption{Kotač $W_4$.}
+\end{figure}
+
+\newpage
+
+Za $W_4$ postupak je jednak kao i za $W_3$. Vrh $1$ može imati stupnjeve 1, 2, 3 ili 4.
+
+\begin{figure}[htb]
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={20mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {$1$}; 
+			\node[main] (2) [below left of=1] {$2$};
+			\node[main] (3) [below right of=1] {$3$};
+			\node[main] (4) [above right of=1] {$4$};
+			\node[main] (5) [above left of=1] {$5$};
+			\draw (1) -- (2);
+			\draw (1) -- (3);
+			\draw (1) -- (4);
+			\draw (1) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\caption*{$deg(1) = 4$}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={20mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {$1$}; 
+			\node[main] (2) [below left of=1] {$2$};
+			\node[main] (3) [below right of=1] {$3$};
+			\node[main] (4) [above right of=1] {$4$};
+			\node[main] (5) [above left of=1] {$5$};
+			\draw (1) -- (2);
+			\draw (1) -- (3);
+			\draw (1) -- (4);
+			\draw (2) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\caption*{$deg(1) = 3$}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={20mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {$1$}; 
+			\node[main] (2) [below left of=1] {$2$};
+			\node[main] (3) [below right of=1] {$3$};
+			\node[main] (4) [above right of=1] {$4$};
+			\node[main] (5) [above left of=1] {$5$};
+			\draw (1) -- (2);
+			\draw (1) -- (3);
+			\draw (2) -- (5);
+			\draw (4) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\caption*{$deg(1) = 2$}
+	\endminipage\hfill
+	\minipage{0.25\textwidth}
+	\begin{center}
+		\begin{tikzpicture}[node distance={20mm}, main/.style = {draw, circle}] 
+			\node[main] (1) {$1$}; 
+			\node[main] (2) [below left of=1] {$2$};
+			\node[main] (3) [below right of=1] {$3$};
+			\node[main] (4) [above right of=1] {$4$};
+			\node[main] (5) [above left of=1] {$5$};
+			\draw (1) -- (2);
+			\draw (2) -- (3);
+			\draw (3) -- (4);
+			\draw (4) -- (5);
+		\end{tikzpicture}
+	\end{center}
+	\caption*{$deg(1) = 1$}
+	\endminipage\hfill
+	\caption{Primjeri razapinjućih stabala grafa $W_3$ gdje vrh $1$ ima različite stupnjeve.}
+\end{figure}
+
+Za $deg(1) = 4$ postoji 1 razapinjuće stablo, za $deg(1) = 3$ postoji 8 razapinjućih stabala, za $deg(1) = 2$ postoji 20 razapinjućih stabala, te za $deg(1) = 1$ postoji 16 razapinjućih stabala, što nas dovodi do ukupnog rezultata: $T(W_4) = 1 + 8 + 20 + 16 = 45$.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[node distance={30mm}, main/.style = {draw, circle}] 
+		\node[main] (1) {$1$}; 
+		\node[main] (2) [below left of=1] {$2$};
+		\node[main] (3) [below right of=1] {$3$};
+		\node[main] (4) [above right of=3] {$4$};
+		\node[main] (5) [above of=1] {$5$};
+		\node[main] (6) [above left of=2] {$6$};
+		\draw (1) -- (2);
+		\draw (1) -- (3);
+		\draw (1) -- (4);
+		\draw (1) -- (5);
+		\draw (1) -- (6);
+		\draw (2) -- (3);
+		\draw (2) -- (6);
+		\draw (3) -- (4);
+		\draw (4) -- (5);
+		\draw (5) -- (6);
+	\end{tikzpicture}
+	\caption{Kotač $W_5$.}
+\end{figure}
+
+\newpage
+
+Postupak za $W_5$ jednak je kao i za $W_4$ i $W_3$. Vrh $1$ može imati stupnjeve 1, 2, 3, 4 i 5. Za $deg(1) = 5$ postoji 1 razapinjuće stablo, za $deg(1) = 4$ postoji 10 razapinjućih stabala, za $deg(1) = 3$ postoji 35 razapinjućih stabala, za $deg(1) = 2$ postoji 50 razapinjućih stabala te za $deg(1) = 1$ postoji 25 razapinjućih stabala, što nas dovodi do ukupnog rezultata: $T(W_5) = 1 + 10 + 35 + 50 + 25 = 121$. Ove ćemo rezultate koristiti kao početne uvjete za rekurzivnu relaciju.
 
 \begin{proposition}
 	 Neka je $T(G)$ broj razapinjućih stabala grafa $G$. Vrijedi:
@@ -796,7 +984,7 @@ Jedan primjer kotača je i $W_6$ prikazan na slici 3.1. Odredit ćemo ukupan bro
 	\end{equation}
 \end{proposition}
 
-Prije samog izračuna, potrebno je dokazati propoziciju 3.5.
+Prije samog izračuna, potrebno je dokazati ovu propoziciju.
 
 \begin{proof}
 Neka je \textit{e} neki fiksni brid od \textit{G}. Uočimo da se razapinjuća stabla od \textit{G} dijele na:
@@ -951,7 +1139,7 @@ Graf $A_n$ dobivamo iz $W_n$ brisanjem jednog od bridova s kojima je "centralni"
 
 \newpage
 
-Koristimo izraz (3.1) nad označenim bridovima sa slike 3.2, te dobivamo sustav rekurzivnih relacija:
+Koristimo izraz (3.1) nad označenim bridovima sa slike 3.14, te dobivamo sustav rekurzivnih relacija:
 
 $T(W_n) = T(A_n) + T(B_{n - 1})$
 
@@ -1375,6 +1563,77 @@ L^{(22)} =
 \]
 
 Broj razapinjućih stabala grafa sa slike 5.1 jednak je determinanti prethodne matrice: $T(G) = det L^{(22)} = 40$. Jednak bi se rezultat dobio da smo matricu \textit{L\textsuperscript{(ii)}} stvorili tako da smo maknuli bilo koji drugi redak i stupac matrice \textit{L}.
+
+U poglavlju 3.2.1 izračunali smo na ruke broj razapinjućih stabala za grafove $W_3$, $W_4$ i $W_5$. Izračunajmo ih sada koristeći matrični teorem o stablima. Njihove matrice susjedstva su sljedeće:
+
+\[
+\centering
+A(W_3) = 
+\begin{bmatrix}
+	0 & 1 & 1 & 1 \\
+	1 & 0 & 1 & 1 \\
+	1 & 1 & 0 & 1 \\
+	1 & 1 & 1 & 0
+\end{bmatrix}
+\quad
+A(W_4) =
+\begin{bmatrix}
+	0 & 1 & 1 & 1 & 1 \\
+	1 & 0 & 1 & 0 & 1\\
+	1 & 1 & 0 & 1 & 0 \\
+	1 & 0 & 1 & 0 & 1 \\
+	1 & 1 & 0 & 1 & 0
+\end{bmatrix}
+\]
+\[
+A(W_5) =
+\begin{bmatrix}
+	0 & 1 & 1 & 1 & 1 & 1 \\
+	1 & 0 & 1 & 0 & 0 & 1 \\
+	1 & 1 & 0 & 1 & 0 & 0 \\
+	1 & 0 & 1 & 0 & 1 & 0 \\
+	1 & 0 & 0 & 1 & 0 & 1 \\
+	1 & 1 & 0 & 0 & 1 & 0
+\end{bmatrix}.
+\]
+
+Za svaku od prethodnih matrica susjedstva odredit ćemo \textit{Laplacian} $L^{(11)}$.
+
+\[
+\centering
+L^{(11)}(W_3) = 
+\begin{bmatrix}
+	3 & -1 & -1 \\
+	-1 & 3 & -1 \\
+	-1 & -1 & 3
+\end{bmatrix}
+\quad
+L^{(11)}(W_4) =
+\begin{bmatrix}
+	3 & -1 & 0 & -1\\
+	-1 & 3 & -1 & 0 \\
+	0 & -1 & 3 & -1 \\
+	-1 & 0 & -1 & 3
+\end{bmatrix}
+\]
+\[
+L^{(11)}(W_5) =
+\begin{bmatrix}
+	3 & -1 & 0 & 0 & -1 \\
+	-1 & 3 & -1 & 0 & 0 \\
+	0 & -1 & 3 & -1 & 0 \\
+	0 & 0 & -1 & 3 & -1 \\
+	-1 & 0 & 0 & -1 & 3
+\end{bmatrix}.
+\]
+
+Sve što je potrebno sada je izračunati determinante ovih matrica. Rezultati su:
+
+\[T(W_3) = detL^{(11)}(W_3) = 16,\]
+\[T(W_4) = detL^{(11)}(W_4) = 45,\]
+\[T(W_5) = detL^{(11)}(W_5) = 121.\]
+
+Ovi rezultati se poklapaju s onima iz poglavlja 3.2.1.
 
 Odredimo pomoću matričnog teorema o stablima eksplicitnu formulu za broj razapinjućih stabala potpunog grafa, $K_n$.
 
