@@ -5,10 +5,10 @@
 \usepackage{algorithm}
 \usepackage{listings}
 \usepackage{amsthm}
-\newtheorem{theorem}{Teorem}[section]
-\newtheorem{definition}{Definicija}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{proposition}{Propozicija}[section]
+\newtheorem{theorem}{Teorem}[chapter]
+\newtheorem{definition}{Definicija}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{proposition}{Propozicija}[chapter]
 
 \begin{document}
 
@@ -56,9 +56,9 @@ Svoj zamah teorija grafova dobiva tek u drugoj polovici 20. stoljeća, stoga je,
 
 Teorija grafova se primjenjuje u mnogim područjima. U računarskoj znanosti, grafovi su od velikog interesa, s jedne strane kao struktura podataka, a s druge strane zbog algoritama nad grafovima, i raznih drugih primjena. Primjerice, grafovi mogu koristiti u izgradnji \textit{NoSQL} baza podataka, gdje se u čvorove mogu spremati podatci, a u bridove veze između podataka.
 
-U društvenim znanostima, korištenjem softvera za analizu društvenih mreža, teorija grafova se može koristiti, primjerice, za istraživanje širenja neke glasine. U molekularnoj biologiji, grafovi se koriste za modeliranje i analizu molekula/spojeva s kompleksnim međusobnim vezama. Osim navedenih, grafovi imaju svoje primjene i u lingvistici, fizici, kemiji, matematici, i mnogim drugima.
+U društvenim znanostima, korištenjem softvera za analizu društvenih mreža, teorija grafova se može koristiti, primjerice, za istraživanje širenja neke glasine. U molekularnoj biologiji, grafovi se koriste za modeliranje i analizu molekula/spojeva s kompleksnim vezama. Osim navedenih, grafovi imaju svoje primjene i u lingvistici, fizici, kemiji, matematici, i mnogim drugima.
 
-U ovom radu bit će više riječi o podvrsti grafova, \textit{stablima}. Stabla mogu, također, biti od velikog značaja u mnogim granama. Primjerice, recimo da se cestom želi povezati nekoliko gradova. Kako bi izvođači radova što jefitnije te radove obavili, pokušat će naći \textit{minimalno razapinjuće stablo} grafa koji će predstavljati te gradove i udaljenosti između njih. O ovom, i sličnim problemima, bit će više riječi u kasnijim poglavljima ovog rada.
+U ovom radu bit će više riječi o podvrsti grafova, \textit{stablima}. Stabla mogu, također, biti od velikog značaja u mnogim disciplinama. Primjerice, recimo da se cestom želi povezati nekoliko gradova. Kako bi izvođači radova što jefitnije obavili radove, pokušat će naći \textit{minimalno razapinjuće stablo} grafa koji će predstavljati te gradove i udaljenosti između njih. O ovom, i sličnim problemima, bit će više riječi u kasnijim poglavljima ovog rada.
 
 U prvom dijelu iznesene su glavne definicije i rezultati vezani uz grafove i stabla. U drugom dijelu će biti govora o razapinjućim stablima. Prikazani su osnovni rezultati te primjeri računanja broja razapinjućih stabala za familije grafova. 
 U trećem iskazan je i dokazan matrični teorem o stablima.
@@ -99,7 +99,7 @@ Vratimo li se na sliku 1.1, primjetit ćemo da je moguće da vrhove nekog grafa 
 	Neka je dan graf G. \textbf{Šetnja} u G je konačan slijed bridova oblika $v_0v_1, v_1v_2, \ldots, v_{m-1}v_m$, također često u oznaci $v_0 \rightarrow v_1 \rightarrow \ldots \rightarrow v_m$, u kojem su svaka dva uzastopna brida ili susjedna ili jednaka.
 \end{definition}
 
-Niz različitih bridova $e_1e_2...e_k$ nazivamo \textit{stazom} ako možemo konstruirati šetnju u našem grafu tako da prvo prođemo kroz brid $e_1$, zatim kroz $e_2$ i tako dalje. Važno je da je krajnji vrh brida $e_i$ ujedno i početni vrh brida $e_{i+1}$. Također, ako staza niti jedan vrh ne dotakne dvaput, onda govorimo o \textit{putu}. Ako stazu završimo u istom vrhu u kojem smo započeli te ako smo u konstruiranju staze iskoristili sve bridove od $G$, onda tu stazu nazivamo \textit{eulerovom stazom}. Za takav graf, u kojem postoji šetnja koja počinje i završava u istom grafu, kažemo da sadrži \textit{ciklus}.
+Niz različitih bridova $e_1e_2...e_k$ nazivamo \textit{stazom} ako možemo konstruirati šetnju u našem grafu tako da prvo prođemo kroz brid $e_1$, zatim kroz $e_2$ i tako dalje. Važno je da je krajnji vrh brida $e_i$ ujedno i početni vrh brida $e_{i+1}$. Također, ako staza niti jedan vrh ne dotakne dvaput, onda govorimo o \textit{putu}. Ako stazu završimo u istom vrhu u kojem smo započeli te ako smo u konstruiranju staze iskoristili sve bridove od $G$, onda tu stazu nazivamo \textit{eulerovom stazom}. Za takav graf, u kojem postoji šetnja koja počinje i završava u istom vrhu, kažemo da sadrži \textit{ciklus}.
 
 Na grafu sa slike 2.1 možemo konstruirati \textit{eulerovu stazu}. 
 
@@ -175,7 +175,7 @@ Za graf sa slike 2.1, jedan od podgrafova je i graf na slici 2.3.
 Nakon što su izneseni neki važni rezultati o samim grafovima, treba se osvrnuti i na njihov prikaz.
 
 \begin{definition}
-	Označimo li vrhove zadanog grafa G s ${1, 2, 3,..., n}$, onda definiramo \textbf{matricu susjedstva} $A = [a_{ij}]$ kao $n \times n$ matricu čiji je element $a_{ij}$ jednak broju bridova koji spaja vrh i s vrhom j.
+	Označimo vrhove zadanog grafa G s ${1, 2, 3,..., n}$. \textbf{Matrica susjedstva} $A = [a_{ij}]$ je $n \times n$ matrica čiji je element $a_{ij}$ jednak broju bridova koji spaja vrh i s vrhom j.
 \end{definition}
 
 Za graf sa slike 2.1, pripadna matrica susjedstva je sljedeća:
@@ -196,7 +196,7 @@ A =
 Zanimljivo je primjetiti da zbroj svih elemenata u pojedinom retku ili stupcu, točno korespondira stupnju pripadajućeg vrha.
 
 \begin{definition}
-	Označe li se dodatno i bridovi zadanog grafa G s ${1, 2, 3, ..., m}$, onda definiramo \textbf{matricu incidencije} kao $n \times m$ matricu $B = [b_{ij}]$ čiji su elementi jednaki 1 ako je vrh 1 incidentan s vrhom j, a 0 inače.
+	Označimo dodatno i bridove zadanog grafa G s ${1, 2, 3, ..., m}$. \textbf{Matrica incidencije} je $n \times m$ matrica $B = [b_{ij}]$ čiji su elementi jednaki 1 ako je vrh i incidentan s vrhom j, a 0 inače.
 \end{definition}
 
 Za graf sa slike 2.1, pripadajuća matrica incidencije je sljedeća:
@@ -294,7 +294,7 @@ Na slici 2.4 prikazana su tri stabla.
 Primjetimo da svako stablo s $n$ vrhova ima točno $n - 1$ bridova.
 
 \begin{theorem}[Broj bridova stabala]
-	Sva stabla s $n$ vrhova imaju $n-1$ bridova. Posljedično, svi povezani grafovi s $n$ vrhova i $n-1$ bridova su stabla.
+	Stablo s $n$ vrhova ima $n-1$ bridova.
 \end{theorem}
 
 Prije dokaza ovog teorema potrebno je uvesti jednu lemmu.
@@ -307,13 +307,13 @@ Prije dokaza ovog teorema potrebno je uvesti jednu lemmu.
 	Uzmimo proizvoljni put \textit{p} maksmimalne dužine u grafu $T$. Tada kranje točke puta $p$ moraju biti listovi. Pretpostavimo li da jedan od ta dva vrha, recimo $a$, nije list, tada $p$ može biti produžen s barem jednim bridom koji nije dio puta $p$, a incidentan je s $a$, što znači da taj put nije maksimalne duljine.
 \end{proof}
 
-Vrhove stabla čiji je stupanj jednak 1 zovemo \textit{listovi}. Sada možemo dokazati teorem 2.8.
+Vrhove stabla čiji je stupanj jednak 1 zovemo \textit{listovi}. Sada možemo dokazati teorem 2.1.
 
 \begin{proof}
 	Koristimo matematičku indukciju na broju vrhova $n$. Ako je $n = 1$, tvrdnja je trivijalno istinita jer neciklički graf s $1$ vrhom nema bridova. Pretpostavimo da je tvrdnja istinita za stabla s $n$ vrhova. Neka je $T$ stablo s $n + 1$ vrhova. Pretpostavimo da je vrh $l$ list stabla $T$ (lemma 2.9 nam govori da list postoji), te obrišimo vrh $l$ i brid $e$ koji je s njim incidentan. Dobit ćemo novo stablo $T'$. (Primjetimo da će $T'$ uvijek biti stablo budući da je povezan, i ne sadrži ciklus.) $T'$ ima $n$ vrhova, te po pretpostavci ima $n-1$ bridova. Sada $T = T' \cup e$ ima n vrhova, i teorem je dokazan.
 \end{proof} 
 
-Sada smo se upoznali sa pojmom stabla. U nastavku će biti više govora o \textbf{razapinjućim stablima}. Također, u nastavku će nas zanimati samo jednostavni i povezani grafovi, tako da to neću svaki put eksplicitno naglašavati.
+U nastavku će biti više govora o \textbf{razapinjućim stablima} grafa. Bavit ćemo se samo jednostavnim i povezanim grafovima.
 
 \chapter{Razapinjuća stabla}
 
@@ -427,7 +427,7 @@ Na primjeru sa slike 3.1 lako je uočiti da razapinjući podgraf zadanog grafa n
 	\textbf{Razapinjuće stablo} zadanog grafa $G = (V, E)$ s $n$ vrhova je podgraf $G' = (V, E')$ grafa $G$ koji je ujedno i stablo.
 \end{definition}
 
-Primjer razapinjućeg stabla za graf sa slike 3.1 je na slici 3.2.
+Primjer razapinjućeg stabla za graf sa slike 3.1 je na slici 3.2. Naravno, stablo sa slike 3.2 nije jedino razapinjuće stablo grafa sa slike 3.1.
 
 \newpage
 
@@ -469,11 +469,11 @@ Primjer razapinjućeg stabla za graf sa slike 3.1 je na slici 3.2.
 	\caption{Jedno razapinjuće stablo grafa sa slike 3.1.}
 \end{figure}
 
-Naravno, stablo sa slike 3.2 nije jedino razapinjuće stablo grafa sa slike 3.1. Bridovima zadanog grafa možemo pridružiti težine. Tada govorimo o težinskom grafu. Problem određivanja minimalnog razapinjućeg stabla težinskog grafa ima brojne primjene.
+Bridovima zadanog grafa možemo pridružiti težine. Tada govorimo o težinskom grafu. Problem određivanja minimalnog razapinjućeg stabla težinskog grafa ima brojne primjene.
 
 \section{Minimalna razapinjuća stabla grafa}
 
-Pretpostavimo da djelatnici Hrvatskih Autocesta žele sagraditi autoceste koje će povezivati gradove Zagreb $(Z)$, Sisak $(S)$, Kutinu, $(K)$, Glinu $(G)$ te Novsku $(N)$. Graf koji prikazuje odnose između ovih gradova prikazan je na slici 3.3. Cilj je povezati sve gradove s autocestom, no s obzirom da je izgradnja skupa, žele se povezati svi gradovi tako da ukupna kilometraža novih cesta bude najmanja moguća. Rješenje ovog problema je u pronalasku minimalnog razapinjućeg stabla. Poznato je nekoliko algoritama, istaknimo \textbf{Primov algoritam}, koji se svodi na to da odaberemo proizvoljni vrh grafa, pa se od skupa ostalih vrhova bira onaj koji je s odabranim vrhom susjedan, te čiji incidentni brid ima najmanju težinu. Svakim korakom algoritma tako povećavamo skup odabranih vrhova, i algoritam se ponavlja dok kardinalni broj odabranih vrhova ne bude jednak broju vrhova grafa. Rezultat će biti najmanje razapinjuće stablo zadanog grafa.
+Pretpostavimo da djelatnici Hrvatskih Autocesta žele sagraditi autoceste koje će povezivati gradove Zagreb $(Z)$, Sisak $(S)$, Kutinu, $(K)$, Glinu $(G)$ te Novsku $(N)$. Graf koji prikazuje odnose između ovih gradova prikazan je na slici 3.3. Cilj je povezati sve gradove s autocestom, no s obzirom da je izgradnja skupa, žele se povezati svi gradovi tako da ukupna kilometraža novih cesta bude najmanja moguća. Ovaj problem se može modelirati kao problem pronalaska minimalnog razapinjućeg stabla grafa. Poznato je nekoliko algoritama, istaknimo \textbf{Primov algoritam}, koji se svodi na to da odaberemo proizvoljni vrh grafa, pa se od skupa ostalih vrhova bira onaj koji je s odabranim vrhom susjedan, te čiji incidentni brid ima najmanju težinu. Svakim korakom algoritma tako povećavamo skup odabranih vrhova, i algoritam se ponavlja dok kardinalni broj odabranih vrhova ne bude jednak broju vrhova grafa. Rezultat će biti minimalno razapinjuće stablo zadanog grafa.
 
 \begin{algorithm}
 	\caption{Primov algoritam}
@@ -537,7 +537,7 @@ Minimalno razapinjuće stablo grafa sa slike 3.3, prikazano je na slici 3.4.
 
 \newpage
 
-Ovaj problem iz teorije grafova može se dovesti u vezu i s drugim problemima iz industrije. Primjenom opisanog rješenja može se uštedjeti pri konstrukciji železničke mreže. Također, ako se u neki grad želi uvesti kabelska televizija, djelatnici će  upravo traženjem minimalnog razapinjućeg stabla tražiti najbolji način za povezati svaki dio grafa sa kablovima. Pri dizajnu električnih krugova, potrebno je povezati određene točke da bi bile električki ekvivalentne. Korištenje minimalnog razapinjućeg stabla omogućit će minimalno korištenje žice. Ovo su samo neke od mogućih primjena.
+Ovaj problem iz teorije grafova može se dovesti u vezu i s drugim problemima iz industrije. Primjenom opisanog rješenja može se uštedjeti pri konstrukciji željezničke mreže. Također, ako se u neki grad želi uvesti kabelska televizija, djelatnici će  upravo traženjem minimalnog razapinjućeg stabla tražiti najbolji način za povezati svakog korisnika s kablovima. Pri dizajnu električnih krugova, potrebno je povezati određene točke da bi bile električki ekvivalentne. Korištenje minimalnog razapinjućeg stabla omogućit će minimalno korištenje žice. Ovo su samo neke od mogućih primjena.
 
 U nastavku rada nećemo konstruirati razapinjuća stabla zadanog grafa, već ćemo se baviti pitanjem koliko razapinjućih stabala neki graf $G$ uopće ima. Odgovor na postavljeno pitanje nije jednostavan i ne postoji zatvorena formula za broj razapinjućih stabala zadanog grafa.
 
@@ -545,7 +545,7 @@ U nastavku rada nećemo konstruirati razapinjuća stabla zadanog grafa, već će
 
 U ovom odjeljku bavit ću se određivanjem eksplicitnih formula za računanje broja razapinjućih stabala određenih familija grafova.
 
-Za grafove s malim brojem vrhova mogu se i na prste konstruirati sva razapinjuća stabla, no već i za grafove s 5 vrhova i nemalim brojem bridova (jednostavni graf s $n$ vrhova može imati maksimalno $\binom{n}{2}$ bridova) taj problem postaje prekompleksan i zahtjeva sistematičniji pristup.
+Za grafove s malim brojem vrhova mogu se i "na prste" konstruirati sva razapinjuća stabla, no već i za grafove s 5 vrhova i nemalim brojem bridova (jednostavni graf s $n$ vrhova može imati maksimalno $\binom{n}{2}$ bridova) taj problem postaje prekompleksan i zahtjeva sistematičniji pristup.
 
 \begin{figure}[htb]
 	\centering
@@ -755,9 +755,7 @@ Na slici 3.5 prikazan je jednostavan graf s 5 vrhova, a na slici 3.6 prikazano j
 
 Kao što vidimo, već za graf sa slike 3.5, koji ima 5 vrhova i 6 bridova (grafovi s 5 vrhova mogu imati maksimalno 10 bridova) ima 12 razapinjućih stabala. Očigledno je da će se povećanjem broja bridova i broja vrhova ovaj zadatak čovjeku znatno otežati, i tu se rađa potreba za pametnijim načinom računanja.
 
-\subsection{Kotač \textit{W\textsubscript{n}}}
-
-Prvi primjer je graf kotač. Kotač $W_n$ je graf koji se dobije iz ciklusa $C_n$ dodavanjem još jednog vrha povezanog sa svim vrhovima ciklusa.
+Kotač $W_n$ je graf koji se dobije iz ciklusa $C_n$ dodavanjem još jednog vrha povezanog sa svim vrhovima ciklusa.
 
 \begin{figure}[htb]
 	\centering
@@ -785,9 +783,9 @@ Prvi primjer je graf kotač. Kotač $W_n$ je graf koji se dobije iz ciklusa $C_n
 	\caption{Kotač $W_6$.}
 \end{figure}
 
-Jedan primjer kotača je i $W_6$ prikazan na slici 3.7. Odredit ćemo ukupan broj razapinjućih stabala kotača $W_n$.
+Jedan primjer kotača je i $W_6$ prikazan na slici 3.7. Odredit ćemo ukupan broj $T(W_n)$ razapinjućih stabala kotača $W_n$.
 
-Izračunajmo prvo na ruke brojeve razapinjućih stabala za kotače $W_3$, $W_4$ i $W_5$. Ti će nam brojevi biti važni pri izračunu broja razapinjućih stabala kotača.
+Izračunajmo prvo "na ruke" brojeve razapinjućih stabala za kotače $W_3$, $W_4$ i $W_5$. Ti će nam brojevi biti važni pri izračunu broja razapinjućih stabala kotača $W_n, n > 5$.
 
 \begin{figure}[htb]
 	\centering
@@ -806,7 +804,7 @@ Izračunajmo prvo na ruke brojeve razapinjućih stabala za kotače $W_3$, $W_4$ 
 	\caption{Kotač $W_3$.}
 \end{figure}
 
-Promotrimo li vrh $1$, primjetit ćemo da on može biti stupnja 1, 2 ili 3.
+Promotrimo li vrh $1$, primjetit ćemo da on u razapinjućem stablu od $W_3$ može biti stupnja 1, 2 ili 3.
 
 \begin{figure}[htb]
 	\minipage{0.33\textwidth}
@@ -854,7 +852,7 @@ Promotrimo li vrh $1$, primjetit ćemo da on može biti stupnja 1, 2 ili 3.
 	\caption{Primjeri razapinjućih stabala grafa $W_3$ gdje vrh $1$ ima različite stupnjeve.}
 \end{figure}
 
-Do broja razapinjućih stabala grafa $W_3$ dolazimo tako da za svaki stupanj vrha $1$ prebrojimo stabla. Tim postupkom dolazimo do sljedećih rezultata: za $deg(1) = 3$ postoji 1 razapinjuće stablo, za $deg(1) = 2$ postoji 6 razapinjućih stabala, te za $deg(1) = 1$ postoji 9 razapinjućih stabala. To nas dovodi do ukupnog rezultata: $T(W_3) = 1 + 6 + 9 = 16$.
+Do broja razapinjućih stabala grafa $W_3$ dolazimo tako da za svaku vrijednost stupnja vrha $1$ prebrojimo stabla. Tim postupkom dolazimo do sljedećih rezultata: za $deg(1) = 3$ postoji 1 razapinjuće stablo, za $deg(1) = 2$ postoji 6 razapinjućih stabala, te za $deg(1) = 1$ postoji 9 razapinjućih stabala. To nas dovodi do ukupnog rezultata: $T(W_3) = 1 + 6 + 9 = 16$.
 
 \begin{figure}[htb]
 	\centering
@@ -878,7 +876,7 @@ Do broja razapinjućih stabala grafa $W_3$ dolazimo tako da za svaki stupanj vrh
 
 \newpage
 
-Za $W_4$ postupak je jednak kao i za $W_3$. Vrh $1$ može imati stupnjeve 1, 2, 3 ili 4.
+Za $W_4$ postupak je jednak kao i za $W_3$. Vrh $1$ može imati stupnjeve 1, 2, 3 ili 4 u razapinjućem stablu od $W_4$.
 
 \begin{figure}[htb]
 	\minipage{0.25\textwidth}
@@ -975,7 +973,9 @@ Za $deg(1) = 4$ postoji 1 razapinjuće stablo, za $deg(1) = 3$ postoji 8 razapin
 
 \newpage
 
-Postupak za $W_5$ jednak je kao i za $W_4$ i $W_3$. Vrh $1$ može imati stupnjeve 1, 2, 3, 4 i 5. Za $deg(1) = 5$ postoji 1 razapinjuće stablo, za $deg(1) = 4$ postoji 10 razapinjućih stabala, za $deg(1) = 3$ postoji 35 razapinjućih stabala, za $deg(1) = 2$ postoji 50 razapinjućih stabala te za $deg(1) = 1$ postoji 25 razapinjućih stabala, što nas dovodi do ukupnog rezultata: $T(W_5) = 1 + 10 + 35 + 50 + 25 = 121$. Ove ćemo rezultate koristiti kao početne uvjete za rekurzivnu relaciju.
+Postupak za $W_5$ jednak je kao i za $W_4$ i $W_3$. Vrh $1$ može imati stupnjeve 1, 2, 3, 4 i 5 u razapinjućem stablu od $W_5$. Za $deg(1) = 5$ postoji 1 razapinjuće stablo, za $deg(1) = 4$ postoji 10 razapinjućih stabala, za $deg(1) = 3$ postoji 35 razapinjućih stabala, za $deg(1) = 2$ postoji 50 razapinjućih stabala te za $deg(1) = 1$ postoji 25 razapinjućih stabala, što nas dovodi do ukupnog rezultata: $T(W_5) = 1 + 10 + 35 + 50 + 25 = 121$. Ove ćemo rezultate koristiti kao početne uvjete za rekurzivnu relaciju.
+
+U računu $T(W_n), n > 5$, koristit ćemo sljedeći rezultat \cite{MM}:
 
 \begin{proposition}
 	 Neka je $T(G)$ broj razapinjućih stabala grafa $G$. Vrijedi:
@@ -983,8 +983,6 @@ Postupak za $W_5$ jednak je kao i za $W_4$ i $W_3$. Vrh $1$ može imati stupnjev
 		T(G) = T(G - e) + T(G \backslash e)
 	\end{equation}
 \end{proposition}
-
-Prije samog izračuna, potrebno je dokazati ovu propoziciju.
 
 \begin{proof}
 Neka je \textit{e} neki fiksni brid od \textit{G}. Uočimo da se razapinjuća stabla od \textit{G} dijele na:
@@ -997,10 +995,10 @@ Vrijedi: $T(G) = x + y$. Uočimo sada da je:
 	\item $x = T(G - e)$ jer je svako razapinjuće stablo od \textit{G} koje ne sadrži \textit{e}, ujedno i razapinjuće stablo od $G - e$
 	\item $y = T(G \backslash e)$ jer svako razapinjuće stablo od $G \backslash e$ možemo dobiti iz razapinjućeg stabla od \textit{G} koje sadrži brid \textit{e} postupkom konkatenacije brida \textit{e} u tom stablu.
 \end{itemize}
-Dakle, vrijedi $T(G) = T(G - e) + T(G \backslash e)$.\footnote{Dokaz po uzoru na \cite{MM}}
+Dakle, vrijedi $T(G) = T(G - e) + T(G \backslash e)$.
 \end{proof}
 
-Da bismo mogli pronaći eksplicitnu formulu za računanje broja razapinjućih stabala kotača s proizvoljnim brojem vrhova, potrebno je definirati nekoliko familija grafova koje ćemo koristiti: $A_n$, $B_n$, $C_n$\footnote{$C_n$ u ovom primjeru, iznimno, neće označavati ciklus} i $D_n$.
+Da bismo mogli pronaći eksplicitnu formulu za računanje broja razapinjućih stabala kotača $W_n$ s proizvoljnim brojem vrhova, potrebno je definirati nekoliko familija grafova koje ćemo koristiti: $A_n$, $B_n$, $C_n$\footnote{$C_n$ u ovom primjeru, iznimno, neće označavati ciklus} i $D_n$.\cite{SND}
 
 \begin{figure}[htb]
 	\minipage{0.33\textwidth}
@@ -1132,12 +1130,8 @@ Da bismo mogli pronaći eksplicitnu formulu za računanje broja razapinjućih st
 	\end{center}
 	\caption*{$D_n$}
 	\endminipage\hfill
-	\caption{Pet familija grafova koje će se koristiti za nalaženje eksplicitne formule za računanje broja razapinjućih stabala grafa kotača $W_n$ ($n$ označava broj vrhova).}
+	\caption{Pet familija grafova koje će se koristiti za nalaženje eksplicitne formule za računanje broja razapinjućih stabala grafa kotača $W_n$.}
 \end{figure}
-
-Graf $A_n$ dobivamo iz $W_n$ brisanjem jednog od bridova s kojima je "centralni" vrh kotača povezan s vrhovima ciklusa. (Na slici 3.8 taj je brid od $W_n$ označen crvenom bojom.) $B_n$ se dobije ako taj isti brid iz $W_n$ obrišemo postupkom kontrakcije. $C_n$ dobivamo iz $W_n$ tako da obrišemo jedan brid između vrhova ciklusa. $D_n$ dobivamo iz $B_n$. Primjetimo da u $B_n$ postoje dva vrha koja sa "centralnim" vrhom imaju višestruke bridove. $D_n$ ćemo dobiti ako obrišemo jedan od tih bridova.
-
-\newpage
 
 Koristimo izraz (3.1) nad označenim bridovima sa slike 3.14, te dobivamo sustav rekurzivnih relacija:
 
@@ -1201,7 +1195,7 @@ Da bi se ova relacija rješila, potrebno je pronaći vrijednosti konstanti $\alp
 \[T(W_4) = \alpha(\dfrac{3 + \sqrt{5}}{2})^4 + \beta(\dfrac{3 - \sqrt{5}}{2})^4 + \gamma = 45\]
 \[T(W_5) = \alpha(\dfrac{3 + \sqrt{5}}{2})^5 + \beta(\dfrac{3 - \sqrt{5}}{2})^5 + \gamma = 121\]
 
-Sustav se može rješiti na razne načine, jedan od njih je i preko matrice dobivenog linearnog sustava:
+Ovaj linearni sustav rješit ćemo \textit{Gaussovom metodom eliminacije}. Evo proširene matrice dobivenog linearnog sustava:
 
 \[
 \centering 
@@ -1214,7 +1208,7 @@ Sustav se može rješiti na razne načine, jedan od njih je i preko matrice dobi
 \end{bmatrix}
 \]
 
-Cilj je da na lijevoj strani ostane jedinična matrica, i onda će vrijednosti s desne strane biti rješenja sustava. Ovaj sustav ima jedinstveno rješenje $\alpha = \beta = 1$ i $\gamma = -2$ iz čega slijedi da je broj razapinjućih stabala grafa kotača $W_n$ jednak:
+Ovaj sustav ima jedinstveno rješenje $\alpha = \beta = 1$ i $\gamma = -2$ iz čega slijedi da je broj razapinjućih stabala grafa kotača $W_n$ jednak:
 
 \begin{equation}
 T(W_n) = (\dfrac{3 + \sqrt{5}}{2})^n + (\dfrac{3 - \sqrt{5}}{2})^n - 2
@@ -1260,22 +1254,7 @@ B = A^T =
 \end{bmatrix}.
 \]
 
-Svakoj matrici pridružen je jedan skalar, njezina \textbf{determinanta}. Determinantu matrice $A$ označavamo na sljedeći način:
-
- \[
-\centering
-det A =
-\left|
-\begin{matrix}
-	1 & 2 & 3 & 4 \\
-	4 & 3 & 2 & 1 \\
-	2 & 1 & 4 & 3 \\
-	3 & 4 & 1 & 2
-\end{matrix}
-\right|
-\]
-
-Determinanta matrice definira se razvojem po nekom retku ili stupcu. Takav se rastav naziva \textbf{Laplaceov razvoj} determinante. Determinanta reda $n$ definira se na sljedeći način:
+Determinanta kvadratne matrice $A$ može se izračunati pomoću sljedeće rekurzivne formule, tzv. metodom \textbf{Laplaceovog razvoja determinante}:
 
 \begin{equation}
 	detA = \sum_{j = 1}^{n} (-1)^{i+j} a_{1,j} M_{ij}.
@@ -1293,7 +1272,20 @@ ako se determinanta razvija po $j$-tom stupcu. U formulama iznad $M_{ij}$ označ
 	\textbf{Minora} $M_{ij}$ je determinanta matrice koju dobijemo tako da početnoj matrici obrišemo $i$-ti redak i $j$-ti stupac.
 \end{definition}
 
-Minora $M_{23}$ matrice $A$ je
+Za matricu
+
+\[
+\centering
+A = 
+\begin{bmatrix}
+	1 & 2 & 3 & 4 \\
+	4 & 3 & 2 & 1 \\
+	2 & 1 & 4 & 3 \\
+	3 & 4 & 1 & 2
+\end{bmatrix}
+\]
+
+minora $M_{23}$ matrice $A$ je
 
  \[
 \centering
@@ -1315,8 +1307,8 @@ Neka je G neusmjereni graf s \textit{n} vrhova, i neka \textit{d\textsubscript{i
 
 \begin{equation}
 	L_{ij} = \left\{ \begin{array}{rcl}
-	d_i & \mbox{ako je}
-	& i = j, \\
+	d_i & \mbox{ako je \textit{i = j},}
+	& \\
 	 -1 & \mbox{ako su vrhovi \textit{i} i \textit{j} povezani,} & \\
 	0 & \mbox{inače.}
 \end{array}\right.
@@ -1353,7 +1345,7 @@ L =
 
 Primjetimo da je suma svakog retka i stupca od \textit{L} jednak 0. Zbog toga je determinanta od \textit{L} uvijek jednaka 0.
 
-Ako je $A$ s dimenzijama $n \times n$, s $A^{ij}$ se označava matrica dimenzija $(n - 1) \times (n - 1)$ dobivena brisanjem \textit{i}-tog redka i \textit{j}-tog stupca matrice \textit{A}. Takve matrice se nazivaju \textit{minore}. Sljedeći teorem nam govori da nam minore \textit{Laplaciana} grafa daju upravo rezultat koji tražimo.
+Ako je $A$ s dimenzijama $n \times n$, s $A^{ij}$ se označava matrica dimenzija $(n - 1) \times (n - 1)$ dobivena brisanjem \textit{i}-tog retka i \textit{j}-tog stupca matrice \textit{A}. Takve matrice se nazivaju \textit{minore}. Sljedeći teorem nam govori da nam minore \textit{Laplaciana} grafa daju upravo rezultat koji tražimo.\cite{MB}
 
 \begin{theorem}[Matrični teorem o stablima]
 Neka je G graf i neka T(G) označava broj razapinjućih stabala u G. Za bilo koji i, T(G) = $det L^{(ii)}$, gdje je L Laplacian od G. Determinanta $det L^{(ii)}$ ne ovisi o izboru parametra i.
@@ -1362,7 +1354,7 @@ Neka je G graf i neka T(G) označava broj razapinjućih stabala u G. Za bilo koj
 \begin{proof}
 Dokaz ćemo provesti matematičkom indukcijom. Pretpostavimo da teorem vrijedi za povezane grafove s manje vrhova ili bridova. Kao bazu indukcije, pretpostavimo da se graf \textit{G} sastoji od samo jednog vrha. U tom slučaju, $T(G) = 1$, i teorem daje ispravan rezultat: $L = [0]$ i $L^{(11)}$ po definiciji ima determinantu jednaku 1.
 
-Ppretpostavimo sada da graf $G$ ima barem dva vrha, te označimo jedan od tih vrhova s $i$. Ako $i$ nije incidentan niti s jednim bridom, onda $G$ nema razapinjuće stablo jer nije povezan. U ovom slučaju će vrijediti tvrdnja teorema jer je $L^{(ii)}$ zapravo \textit{Laplacian} ostatka grafa te će njezina determinanta biti jednaka nuli.
+Pretpostavimo sada da graf $G$ ima barem dva vrha, te označimo jedan od tih vrhova s $i$. Ako $i$ nije incidentan niti s jednim bridom, onda $G$ nema razapinjuće stablo jer nije povezan. U ovom slučaju će vrijediti tvrdnja teorema jer je $L^{(ii)}$ zapravo \textit{Laplacian} ostatka grafa te će njezina determinanta biti jednaka nuli.
 
 \begin{figure}[htb]
 	\minipage{0.33\textwidth}
@@ -1419,13 +1411,13 @@ Ppretpostavimo sada da graf $G$ ima barem dva vrha, te označimo jedan od tih vr
 	\caption{$G - e$ je graf koji se dobije brisanjem brida \textit{e}, a $G \backslash e$ je graf koji se dobije kontrakcijom brida \textit{e} i spajanjem incidentnih vrhova u jedan vrh.}
 \end{figure}
 
-Sada pretpostavimo da je $i$ povezan s nekim drugim vrhom $j$, te neka $e$ označava brid $(i,j)$. Kao što je prikazano na slici 4.2, postoje dva načina na koje se može modificirati $G$: brid $e$ možemo jednostavno izbrisati, ili možemo kontrakcijom vrhove $i$ i $j$ spojiti u jedan vrh. Takve grafove označujemo s $G - e$ i $G \backslash e$. vrijedi da broj razapinjućih stabala $T(G)$ zadovoljava sljedeći rekurzivni izraz:
+Sada pretpostavimo da je $i$ povezan s nekim drugim vrhom $j$, te neka $e$ označava brid $(i,j)$. Kao što je prikazano na slici 4.2, postoje dva načina na koje se može modificirati $G$: brid $e$ možemo jednostavno izbrisati, ili možemo kontrakcijom vrhove $i$ i $j$ spojiti u jedan vrh. Takve grafove označujemo s $G - e$ i $G \backslash e$. Vrijedi da broj razapinjućih stabala $T(G)$ zadovoljava sljedeći rekurzivni izraz:
 
 \begin{equation}
 	T(G) = T(G - e) + T(G \backslash e)
 \end{equation}
 
-Ispravnost izraza (4.2) je dokazana u propoziciji 3.5.
+Ispravnost izraza (4.2) je dokazana u propoziciji 3.1.
 
 Prema pretpostavci matematičke indukcije matrični teorem vrijedi za $G - e$ i za $G \backslash e$. Možemo razmjestiti vrhove od \textit{G} tako da su \textit{i} i \textit{j} prva dva vrha. Sada Laplacian \textit{L} od \textit{G} možemo napisati kao:
 
@@ -1499,10 +1491,10 @@ Ovaj rezultat slijedi iz činjenice da determinanta matrice može biti napisana 
 	detA = \sum_{j = 1}^{n} (-1)^j A_{1,j} detA^{(1,j)}.
 \end{equation}
 
-Dakle, ako se dvije matrice razlikuju samo u vrijednostima na poziciji (1,1) pri čemu je $a_{11} = b_{11} + 1$, a $A_{ij} = B_{ij}$ za svaki drugi $i$ i $j$, njihove determinante se razlikuju za determinantu njigovih (1,1) minora, odnosno $detA = detB + detA^{(1,1)}.$ Primjenimo li ovo za $L_G^{(ii)}$ i $L_{G - e}^{(ii)}$, dobit ćemo izraz (4.5), čime se dovršava dokaz ovog teorema.\footnote{Dokaz po uzoru na \cite{YWC}}
+Dakle, ako se dvije matrice razlikuju samo u vrijednostima na poziciji (1,1) pri čemu je $a_{11} = b_{11} + 1$, a $A_{ij} = B_{ij}$ za svaki drugi $i$ i $j$, njihove determinante se razlikuju za determinantu njigovih (1,1) minora, odnosno $detA = detB + detA^{(1,1)}.$ Primjenimo li ovo za $L_G^{(ii)}$ i $L_{G - e}^{(ii)}$, dobit ćemo izraz (4.5), čime se dovršava dokaz ovog teorema.\cite{YWC}
 \end{proof}
 
-\chapter{Prebrajanje razapinjućih stabala grafa pomoću matričnog teorema o stablima}
+\section{Prebrajanje razapinjućih stabala grafa pomoću matričnog teorema o stablima}
 
 U ovom poglavlju primjenit ćemo matrični teorem o stablima za računanje broja razapinjućih stabala poznatih familija grafova. Za početak, za ilustraciju, evo jednog jednostavnog primjera.
 
@@ -1526,7 +1518,7 @@ U ovom poglavlju primjenit ćemo matrični teorem o stablima za računanje broja
 	\caption{Primjer grafa s 5 vrhova}
 \end{figure}
 
-Na slici 5.1 prikazan je graf s 5 vrhova. Matrica susjedstva \textit{A} navedenog grafa, te njezin laplacian \textit{L} su sljedeći:
+Na slici 4.3 prikazan je graf s 5 vrhova. Matrica susjedstva \textit{A} navedenog grafa, te njezin laplacian \textit{L} su sljedeći:
 
 \[
 \centering
@@ -1562,9 +1554,9 @@ L^{(22)} =
 \end{bmatrix}
 \]
 
-Broj razapinjućih stabala grafa sa slike 5.1 jednak je determinanti prethodne matrice: $T(G) = det L^{(22)} = 40$. Jednak bi se rezultat dobio da smo matricu \textit{L\textsuperscript{(ii)}} stvorili tako da smo maknuli bilo koji drugi redak i stupac matrice \textit{L}.
+Broj razapinjućih stabala grafa sa slike 4.3 jednak je determinanti prethodne matrice: $T(G) = det L^{(22)} = 40$. Jednak bi se rezultat dobio da smo matricu \textit{L\textsuperscript{(ii)}} stvorili tako da smo maknuli bilo koji drugi redak i stupac matrice \textit{L}.
 
-U poglavlju 3.2.1 izračunali smo na ruke broj razapinjućih stabala za grafove $W_3$, $W_4$ i $W_5$. Izračunajmo ih sada koristeći matrični teorem o stablima. Njihove matrice susjedstva su sljedeće:
+U poglavlju 3.2.1 izračunali smo "na prste" broj razapinjućih stabala za grafove $W_3$, $W_4$ i $W_5$. Izračunajmo ih sada koristeći matrični teorem o stablima. Njihove matrice susjedstva su sljedeće:
 
 \[
 \centering
@@ -1665,7 +1657,7 @@ Odredimo pomoću matričnog teorema o stablima eksplicitnu formulu za broj razap
 	\caption{Primjer potpunog grafa, $K_6$}
 \end{figure}
 
-Potpuni graf je graf u kojem je svaki vrh susjedan sa svim ostalim vrhovima. Primjer jednog potpunog grafa je dan na slici 5.2.
+Potpuni graf je graf u kojem je svaki vrh susjedan sa svim ostalim vrhovima. Primjer jednog potpunog grafa je dan na slici 4.4.
 
 Poznato je da potpuni graf s $n$ vrhova, $K_n$, ima $n^{n-2}$ razapinjućih stabala. Sada ću taj rezultat dokazati pomoću matričnog teorema o stablima (za alternativni dokaz, vidi \cite{KKNP}).
 
@@ -1788,9 +1780,7 @@ Broj razapinjućih stabala grafa kojeg korisnik grafički unese u aplikaciju se 
 
 Prikazat ćemo rad algoritma za računanje broja razapinjućih stabala na primjerima Petersonovog grafa, i kotača sa 6 vrhova, \textit{W\textsubscript{6}}.
 
-\subsection{Petersonov graf}
-
-Na slici 6.1 se vidi Petersonov graf nacrtan u aplikaciji \textit{Graphelite}.
+Na slici 5.2 se vidi Petersonov graf nacrtan u aplikaciji \textit{Graphelite}.
 
 \begin{figure}[htb]
 	\centering
@@ -1806,11 +1796,9 @@ Na slici 6.1 se vidi Petersonov graf nacrtan u aplikaciji \textit{Graphelite}.
 	\label{fig:petersonov-broj}
 \end{figure}
 
-Na slici 6.2 vidi se matrica susjedstva Petersonovog grafa te broj razapinjućih stabala istog. Vidimo da je taj broj jednak 2000.
+Na slici 5.3 vidi se matrica susjedstva Petersonovog grafa te broj razapinjućih stabala istog. Vidimo da je taj broj jednak 2000.
 
-\subsection{Kotač sa 6 vrhova, \textit{W\textsubscript{5}}}
-
-Na slici 6.3 se vidi graf kotač s 6 vrhova, \textit{W\textsubscript{5}} nacrtan u aplikaciji \textit{Graphelite}.
+Na slici 5.4 se vidi graf kotač s 6 vrhova, \textit{W\textsubscript{5}} nacrtan u aplikaciji \textit{Graphelite}.
 
 \begin{figure}[htb]
 	\centering
@@ -1826,7 +1814,7 @@ Na slici 6.3 se vidi graf kotač s 6 vrhova, \textit{W\textsubscript{5}} nacrtan
 	\label{fig:kotac-broj}
 \end{figure}
 
-Na slici 6.4 vidi se matrica susjedstva za \textit{W\textsubscript{5}} te broj razapinjućih stabala istog. Vidimo da je taj broj jednak 121, što smo i pokazali u ovom radu.
+Na slici 5.5 vidi se matrica susjedstva za \textit{W\textsubscript{5}} te broj razapinjućih stabala istog. Vidimo da je taj broj jednak 121, što smo i pokazali u ovom radu.
 
 \chapter{Zaključak}
 
@@ -1835,9 +1823,9 @@ Upoznali smo se s pojmom grafa, iznijeli osnovne definicije i rezultate o grafov
 
 U glavnom dijelu rada smo se bavili određivanjem broja razapinjućih stabala proizvoljnog grafa i utvrdili da ne postoji eksplicitna zatvorena formula. Dali smo primjer grafa kotača na kojem smo izračunali eksplicitnu formulu za određivanje broja razapinjućih stabala koristeći rekurzivne tehnike. Za poneke familije grafova je i moguće odrediti eksplicitnu formulu u ovisnosti o broju vrhova, no u općem slučaju, formula nije poznata.
 
-Moćan alat za određivanje broja razapinjućih stabala grafa je opisan u radu. Teorem nam kaže da je broj razapinjućih stabala proizvoljnog grafa jednak determinanti proizvoljne minore \textit{Laplacove} matrice grafa $G$, koja se lako izvede iz matrice susjedstva od $G$.
+Moćan alat za određivanje broja razapinjućih stabala grafa je opisan u radu. Matrični teorem o stablima nam kaže da je broj razapinjućih stabala proizvoljnog grafa jednak determinanti proizvoljne minore \textit{Laplacove} matrice grafa $G$, koja se lako izvede iz matrice susjedstva od $G$.
 
-To je elegantan rezultat koji možda čovjeku ne daje efikasan način ručnog računanja broja razapinjućih stabala (jer već i računanje determinante matrice koja ima dimenzije $8 \times 8$ može biti mukotrpan posao), ali omogućuje efektivno računalno rješavanje problema pri čemu je brzina rješavanja problema jednaka brzini računanja determinante. 
+To je elegantan rezultat koji možda čovjeku ne daje efikasan način "ručnog" računanja broja razapinjućih stabala (jer već i računanje determinante matrice koja ima dimenzije $8 \times 8$ može biti mukotrpan posao), ali omogućuje efektivno računalno rješavanje problema pri čemu je brzina rješavanja problema jednaka brzini računanja determinante. 
 
 Predstavljena je i web-aplikacija \textit{Graphelite} koja korisniku omogućuje crtanje grafova i provedbu raznih korisnih algoritama. Među njima je i algoritam za računanje broja razapinjućih stabala, i njegov pseudokod je napisan u ovom radu.
 
@@ -1866,7 +1854,7 @@ Tema ovog rada je prebrojavanje razapinjućih stabala grafa. Predstavljeni su os
 
 \engtitle{Counting spanning trees of a graph}
 \begin{abstract}
-The thesis for this paper is counting spanning trees. I presented the basic concepts of graph theory, then I introduced the spanning trees and connected them with some applications. I expressed and proved the Matrix-tree theorem and connected it with applications. In the end, I showed the implementation of the \textit{Graphelite} web-application for working with graph theory.
+The topic for this thesis is counting spanning trees. We presented the basic concepts of graph theory, then we introduced the notion of spanning trees and described some applications. We stated and proved the Matrix-Tree Theorem and demonstrated applications. In the end, we showed the implementaion of the \textit{Graphelite} web-application for computations on graphs.
 
 \keywords{graph theory, trees, spanning trees, matrix-tree theorem}
 \end{abstract}

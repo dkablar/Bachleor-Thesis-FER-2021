@@ -4,14 +4,11 @@
 \contentsline {chapter}{\numberline {3}Razapinjuća stabla}{8}{}%
 \contentsline {section}{\numberline {3.1}Minimalna razapinjuća stabla grafa}{9}{}%
 \contentsline {section}{\numberline {3.2}Primjeri prebrojavanja razapinjućih stabala grafa}{12}{}%
-\contentsline {subsection}{\numberline {3.2.1}Kotač \textit {W\textsubscript {n}}}{13}{}%
-\contentsline {chapter}{\numberline {4}Matrični teorem o stablima}{21}{}%
-\contentsline {section}{\numberline {4.1}Iskaz i dokaz teorema}{22}{}%
-\contentsline {chapter}{\numberline {5}Prebrajanje razapinjućih stabala grafa pomoću matričnog teorema o stablima}{26}{}%
-\contentsline {chapter}{\numberline {6}Graphelite - računanje broja razapinjućih stabala}{30}{}%
-\contentsline {section}{\numberline {6.1}Računanje broja razapinjućih stabala grafa}{30}{}%
-\contentsline {section}{\numberline {6.2}Demonstracija rada programa}{32}{}%
-\contentsline {subsection}{\numberline {6.2.1}Petersonov graf}{32}{}%
-\contentsline {subsection}{\numberline {6.2.2}Kotač sa 6 vrhova, \textit {W\textsubscript {5}}}{32}{}%
-\contentsline {chapter}{\numberline {7}Zaključak}{35}{}%
-\contentsline {chapter}{Literatura}{36}{}%
+\contentsline {chapter}{\numberline {4}Matrični teorem o stablima}{20}{}%
+\contentsline {section}{\numberline {4.1}Iskaz i dokaz teorema}{21}{}%
+\contentsline {section}{\numberline {4.2}Prebrajanje razapinjućih stabala grafa pomoću matričnog teorema o stablima}{24}{}%
+\contentsline {chapter}{\numberline {5}Graphelite - računanje broja razapinjućih stabala}{28}{}%
+\contentsline {section}{\numberline {5.1}Računanje broja razapinjućih stabala grafa}{28}{}%
+\contentsline {section}{\numberline {5.2}Demonstracija rada programa}{30}{}%
+\contentsline {chapter}{\numberline {6}Zaključak}{33}{}%
+\contentsline {chapter}{Literatura}{34}{}%

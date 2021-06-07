@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  6 JUN 2021 22:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  7 JUN 2021 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -610,7 +610,7 @@ See the natbib package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.82 ...mand\NAT@force@numbers{}\NAT@force@numbers
+l.79 ...mand\NAT@force@numbers{}\NAT@force@numbers
                                                   
 Check the bibliography entries for non-compliant syntax,
 or select author-year BibTeX style, e.g. plainnat
@@ -732,60 +732,67 @@ Poglavlje 2.
 Poglavlje 3.
 [8
 
-] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
+]
+Overfull \hbox (0.3871pt too wide) in paragraph at lines 472--473
+\T1/ptm/m/n/12 grafu. Pro-blem odre-ži-va-nja mi-ni-mal-nog ra-za-pi-nju-¢eg st
+a-bla te-ºin-skog grafa ima brojne
+ []
+
+[9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
 Poglavlje 4.
-[21
+[20
 
-] [22] [23] [24] [25]
+] [21] [22] [23]
+Overfull \hbox (9.58235pt too wide) in paragraph at lines 1497--1497
+[]\T1/ptm/b/n/17.28 Prebrajanje ra-za-pi-nju-¢ih sta-bala grafa po-mo¢u ma-
+ []
+
+[24] [25] [26] [27]
 Poglavlje 5.
-[26
-
-] [27] [28] [29]
-Poglavlje 6.
-<slike/graphelite.png, id=123, 545.6385pt x 528.17325pt>
+<slike/graphelite.png, id=116, 545.6385pt x 528.17325pt>
 File: slike/graphelite.png Graphic file (type png)
 <use slike/graphelite.png>
-Package pdftex.def Info: slike/graphelite.png  used on input line 1746.
+Package pdftex.def Info: slike/graphelite.png  used on input line 1738.
 (pdftex.def)             Requested size: 206.28249pt x 199.67633pt.
-[30
+[28
 
- <./slike/graphelite.PNG>] [31]
-<slike/petersonov.png, id=132, 292.09125pt x 302.3295pt>
+ <./slike/graphelite.PNG>] [29]
+<slike/petersonov.png, id=126, 292.09125pt x 302.3295pt>
 File: slike/petersonov.png Graphic file (type png)
 <use slike/petersonov.png>
-Package pdftex.def Info: slike/petersonov.png  used on input line 1797.
+Package pdftex.def Info: slike/petersonov.png  used on input line 1787.
 (pdftex.def)             Requested size: 206.28249pt x 213.5206pt.
-<slike/petersonovbroj.png, id=133, 211.38976pt x 316.18124pt>
+<slike/petersonovbroj.png, id=127, 211.38976pt x 316.18124pt>
 File: slike/petersonovbroj.png Graphic file (type png)
 <use slike/petersonovbroj.png>
-Package pdftex.def Info: slike/petersonovbroj.png  used on input line 1804.
+Package pdftex.def Info: slike/petersonovbroj.png  used on input line 1794.
 (pdftex.def)             Requested size: 206.28249pt x 308.56253pt.
-<slike/kotac2.png, id=134, 322.20375pt x 313.77225pt>
+<slike/kotac2.png, id=128, 322.20375pt x 313.77225pt>
 File: slike/kotac2.png Graphic file (type png)
 <use slike/kotac2.png>
-Package pdftex.def Info: slike/kotac2.png  used on input line 1817.
+Package pdftex.def Info: slike/kotac2.png  used on input line 1805.
 (pdftex.def)             Requested size: 206.28249pt x 200.89015pt.
-<slike/kotacbroj.png, id=135, 264.99pt x 284.86424pt>
+<slike/kotacbroj.png, id=129, 264.99pt x 284.86424pt>
 File: slike/kotacbroj.png Graphic file (type png)
 <use slike/kotacbroj.png>
-Package pdftex.def Info: slike/kotacbroj.png  used on input line 1824.
+Package pdftex.def Info: slike/kotacbroj.png  used on input line 1812.
 (pdftex.def)             Requested size: 206.28249pt x 221.7542pt.
- [32 <./slike/petersonov.PNG>] [33 <./slike/petersonovbroj.PNG> <./slike/kotac2
-.PNG>] [34 <./slike/kotacbroj.PNG>]
-Poglavlje 7.
-[35
+ [30 <./slike/petersonov.PNG>] [31 <./slike/petersonovbroj.PNG> <./slike/kotac2
+.PNG>] [32 <./slike/kotacbroj.PNG>]
+Poglavlje 6.
+[33
 
-] [36
+] [34
 
-] [37] (./zavrsni.aux) ) 
+] [35] (./zavrsni.aux) ) 
 Here is how much of TeX's memory you used:
- 18494 strings out of 479917
- 339884 string characters out of 5886666
- 650876 words of memory out of 5000000
- 34716 multiletter control sequences out of 15000+600000
- 613922 words of font info for 115 fonts, out of 8000000 for 9000
+ 18489 strings out of 479917
+ 339834 string characters out of 5886666
+ 660713 words of memory out of 5000000
+ 34714 multiletter control sequences out of 15000+600000
+ 607279 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,14n,88p,1004b,855s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 77i,14n,88p,1027b,857s stack positions out of 5000i,500n,10000p,200000b,80000s
 {a:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc
 }<a:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><a:/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><a:/texlive/2020/
@@ -801,10 +808,10 @@ s/type1/urw/helvetic/uhvr8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb><a:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><a:
 /texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><a:/texlive/2020/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (40 pages, 368859 bytes).
+Output written on zavrsni.pdf (38 pages, 366440 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
+ 208 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
